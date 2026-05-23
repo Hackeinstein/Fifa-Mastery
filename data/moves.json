@@ -1,0 +1,1671 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-05-21",
+  "moves": [
+
+    {
+      "id": "body_feint_l",
+      "name": "Body Feint Left",
+      "stars": 1,
+      "category": "feint",
+      "difficulty": "beginner",
+      "tags": ["1-star", "feint", "basic", "beginner"],
+      "description": "Shift your body weight sharply to the left to wrong-foot the defender. One of the most fundamental moves in football — master this before anything else.",
+      "tips": [
+        "Combine immediately with a burst of sprint in the opposite direction",
+        "Works best when defender is standing still or moving toward you",
+        "Don't overuse — defenders adapt quickly to repeated feints",
+        "Effective near the touchline to create crossing space"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 0,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "flick",
+          "controller": {
+            "stick": "LS",
+            "direction": "LEFT",
+            "buttons": [],
+            "svgTargets": ["LEFT_STICK"]
+          },
+          "beatValue": 1.0,
+          "label": "Flick LS Left",
+          "tolerance": 45
+        }
+      ]
+    },
+
+    {
+      "id": "body_feint_r",
+      "name": "Body Feint Right",
+      "stars": 1,
+      "category": "feint",
+      "difficulty": "beginner",
+      "tags": ["1-star", "feint", "basic", "beginner"],
+      "description": "Mirror of the Body Feint Left. Lean right to pull the defender, then burst left or straight ahead.",
+      "tips": [
+        "Pair with a quick left sprint after for maximum effect",
+        "Use in tight midfield areas to create passing lanes",
+        "The timing of the flick defines how convincing the feint looks",
+        "Practice alternating left/right feints rhythmically"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 0,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "flick",
+          "controller": {
+            "stick": "LS",
+            "direction": "RIGHT",
+            "buttons": [],
+            "svgTargets": ["LEFT_STICK"]
+          },
+          "beatValue": 1.0,
+          "label": "Flick LS Right",
+          "tolerance": 45
+        }
+      ]
+    },
+
+    {
+      "id": "stepover_r",
+      "name": "Stepover (Right)",
+      "stars": 2,
+      "category": "stepover",
+      "difficulty": "beginner",
+      "tags": ["2-star", "stepover", "basic"],
+      "description": "Step over the ball from right to left. A classic dribbling trick that can be chained for devastating effect against committed defenders.",
+      "tips": [
+        "The RS arc goes from down-right to right — think of drawing a 'C'",
+        "Chain 2–3 stepovers to keep the defender guessing",
+        "Slow down slightly before the stepover so the fake lands effectively",
+        "Combine with a sprint burst afterward to exploit the created gap"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 0,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "rotate_cw",
+          "controller": {
+            "stick": "RS",
+            "direction": "DOWN_RIGHT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 1.0,
+          "label": "Rotate RS from Down-Right to Right (CW arc)",
+          "tolerance": 45
+        }
+      ]
+    },
+
+    {
+      "id": "stepover_l",
+      "name": "Stepover (Left)",
+      "stars": 2,
+      "category": "stepover",
+      "difficulty": "beginner",
+      "tags": ["2-star", "stepover", "basic"],
+      "description": "Step over the ball from left to right. Mirror of the right stepover. Essential for ambidextrous dribbling.",
+      "tips": [
+        "RS arc goes from down-left to left — mirror of the right stepover",
+        "Practice switching between left and right stepovers",
+        "Works well on the right flank when cutting inside",
+        "Add pace variation: slow approach, explosive exit"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 0,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "rotate_ccw",
+          "controller": {
+            "stick": "RS",
+            "direction": "DOWN_LEFT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 1.0,
+          "label": "Rotate RS from Down-Left to Left (CCW arc)",
+          "tolerance": 45
+        }
+      ]
+    },
+
+    {
+      "id": "heel_to_heel",
+      "name": "Heel-to-Heel Flick",
+      "stars": 2,
+      "category": "feint",
+      "difficulty": "beginner",
+      "tags": ["2-star", "heel", "flick", "basic"],
+      "description": "Flick the ball forward with one heel, then knock it back with the other. A rapid two-touch move that creates uncertainty in the defender.",
+      "tips": [
+        "Both flicks must be fast — less than half a beat between them",
+        "The forward flick direction matches your run direction",
+        "Use when stationary or slow-dribbling — speed kills the effect",
+        "Great when a defender is right behind you tracking your movement"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 0,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "UP",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.5,
+          "label": "Flick RS Up (forward)",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "DOWN",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.5,
+          "label": "Flick RS Down (back) — quickly",
+          "tolerance": 45
+        }
+      ]
+    },
+
+    {
+      "id": "ball_roll_r",
+      "name": "Ball Roll (Right)",
+      "stars": 2,
+      "category": "ball_roll",
+      "difficulty": "beginner",
+      "tags": ["2-star", "ball-roll", "L2", "basic"],
+      "description": "Roll the ball sideways to the right while shielding with your body. Creates space to shift direction or find a passing lane.",
+      "tips": [
+        "Hold L2 firmly throughout — releasing early cancels the move",
+        "The ball roll speed depends on your player's dribbling stats",
+        "Chain with a fake shot to send defenders the wrong way",
+        "Use from a standing position for the cleanest execution"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 0,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "hold",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["L2"],
+            "svgTargets": ["trigger-l2"]
+          },
+          "beatValue": 0.25,
+          "holdBeats": 2.0,
+          "label": "Hold L2",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "RIGHT",
+            "buttons": ["L2"],
+            "svgTargets": ["RIGHT_STICK", "trigger-l2"]
+          },
+          "beatValue": 1.0,
+          "label": "Hold L2 + Flick RS Right",
+          "tolerance": 45
+        }
+      ]
+    },
+
+    {
+      "id": "ball_roll_l",
+      "name": "Ball Roll (Left)",
+      "stars": 2,
+      "category": "ball_roll",
+      "difficulty": "beginner",
+      "tags": ["2-star", "ball-roll", "L2", "basic"],
+      "description": "Roll the ball to the left while using your body to shield. The left variation — equally important to practice both sides.",
+      "tips": [
+        "Same mechanics as Ball Roll Right but mirrored",
+        "Practice transitioning from Ball Roll Right directly into Ball Roll Left",
+        "Your player's weak foot rating does NOT affect ball rolls",
+        "Use facing a corner flag to roll away from defenders approaching from behind"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 0,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "hold",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["L2"],
+            "svgTargets": ["trigger-l2"]
+          },
+          "beatValue": 0.25,
+          "holdBeats": 2.0,
+          "label": "Hold L2",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "LEFT",
+            "buttons": ["L2"],
+            "svgTargets": ["RIGHT_STICK", "trigger-l2"]
+          },
+          "beatValue": 1.0,
+          "label": "Hold L2 + Flick RS Left",
+          "tolerance": 45
+        }
+      ]
+    },
+
+    {
+      "id": "drag_back",
+      "name": "Drag Back",
+      "stars": 3,
+      "category": "ball_roll",
+      "difficulty": "intermediate",
+      "tags": ["3-star", "drag", "L2", "possession"],
+      "description": "Pull the ball backward sharply, reversing direction to escape pressure. A fundamental possession skill — used by top players every match.",
+      "tips": [
+        "Hold L2 before inputting LS down — the order matters",
+        "Follow immediately with a new run direction on LS after the drag",
+        "Most effective when a defender commits to a tackle",
+        "Combine with a body feint before the drag to confuse the AI"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 0,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "hold",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["L2"],
+            "svgTargets": ["trigger-l2"]
+          },
+          "beatValue": 0.25,
+          "holdBeats": 1.0,
+          "label": "Hold L2",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "hold",
+          "controller": {
+            "stick": "LS",
+            "direction": "DOWN",
+            "buttons": ["L2"],
+            "svgTargets": ["LEFT_STICK", "trigger-l2"]
+          },
+          "beatValue": 1.5,
+          "holdBeats": 1.5,
+          "label": "Hold L2 + Push LS Down (toward your player)",
+          "tolerance": 45
+        }
+      ]
+    },
+
+    {
+      "id": "fake_shot",
+      "name": "Fake Shot",
+      "stars": 3,
+      "category": "fake",
+      "difficulty": "intermediate",
+      "tags": ["3-star", "fake", "face-button", "versatile"],
+      "description": "Shape as if to shoot or pass, then cancel — sending the goalkeeper and defenders diving the wrong way. One of the most versatile moves in football.",
+      "tips": [
+        "The LS direction at cancellation is the actual exit direction",
+        "Use near the box — the threat of a shot makes this lethal",
+        "Works as a fake pass too: tap △ then quickly ✕",
+        "Slow down before input for a convincing wind-up animation"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 0,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "button_press",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["◯"],
+            "svgTargets": ["CIRCLE"]
+          },
+          "beatValue": 0.5,
+          "label": "Tap ◯ (Shoot)",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "button_press",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["✕"],
+            "svgTargets": ["CROSS"]
+          },
+          "beatValue": 0.5,
+          "label": "Quickly tap ✕ (cancel) + move LS in exit direction",
+          "tolerance": 45
+        }
+      ]
+    },
+
+    {
+      "id": "roulette_r",
+      "name": "Roulette (Right)",
+      "stars": 3,
+      "category": "roulette",
+      "difficulty": "intermediate",
+      "tags": ["3-star", "roulette", "spin", "L2"],
+      "description": "A 360° spin move turning the player right while shielding the ball. Based on the Zidane/Maradona roulette — protects the ball throughout the rotation.",
+      "tips": [
+        "Hold L2 for the entire duration of the rotation",
+        "RS rotation is clockwise — start from the top (up) and sweep right",
+        "Player direction affects the spin — face the right way before executing",
+        "Most effective with high-agility players (90+ agility)"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 1,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "hold",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["L2"],
+            "svgTargets": ["trigger-l2"]
+          },
+          "beatValue": 0.25,
+          "holdBeats": 3.0,
+          "label": "Hold L2",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "rotate_cw",
+          "controller": {
+            "stick": "RS",
+            "direction": "UP",
+            "buttons": ["L2"],
+            "svgTargets": ["RIGHT_STICK", "trigger-l2"]
+          },
+          "beatValue": 2.0,
+          "label": "Hold L2 + Rotate RS Clockwise 270°",
+          "tolerance": 45
+        }
+      ]
+    },
+
+    {
+      "id": "roulette_l",
+      "name": "Roulette (Left)",
+      "stars": 3,
+      "category": "roulette",
+      "difficulty": "intermediate",
+      "tags": ["3-star", "roulette", "spin", "L2"],
+      "description": "The counter-clockwise spin variation. Turning left — important to master both directions for maximum unpredictability.",
+      "tips": [
+        "Counter-clockwise: start RS up, sweep left then down",
+        "The dominant direction of your player's run affects exit direction",
+        "Chain with a burst sprint immediately after completing the rotation",
+        "Advanced: vary speed of rotation to delay or accelerate exit"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 1,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "hold",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["L2"],
+            "svgTargets": ["trigger-l2"]
+          },
+          "beatValue": 0.25,
+          "holdBeats": 3.0,
+          "label": "Hold L2",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "rotate_ccw",
+          "controller": {
+            "stick": "RS",
+            "direction": "UP",
+            "buttons": ["L2"],
+            "svgTargets": ["RIGHT_STICK", "trigger-l2"]
+          },
+          "beatValue": 2.0,
+          "label": "Hold L2 + Rotate RS Counter-Clockwise 270°",
+          "tolerance": 45
+        }
+      ]
+    },
+
+    {
+      "id": "heel_chop_r",
+      "name": "Heel Chop (Right)",
+      "stars": 3,
+      "category": "chop",
+      "difficulty": "intermediate",
+      "tags": ["3-star", "heel-chop", "L2", "quick"],
+      "description": "A sharp heel chop that cuts the ball to the right while sprinting. Explosive direction change — great for beating a defender in a footrace.",
+      "tips": [
+        "Input while sprinting (holding R2) for maximum speed burst after",
+        "The cut direction changes based on your run direction",
+        "Works best in open space with room to accelerate after the chop",
+        "Pair with L2 Ball Roll before the chop to feint then cut"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 1,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "hold",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["L2"],
+            "svgTargets": ["trigger-l2"]
+          },
+          "beatValue": 0.25,
+          "holdBeats": 1.5,
+          "label": "Hold L2",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "RIGHT",
+            "buttons": ["L2"],
+            "svgTargets": ["RIGHT_STICK", "trigger-l2"]
+          },
+          "beatValue": 1.0,
+          "label": "Hold L2 + Flick RS Right (sharp chop)",
+          "tolerance": 40
+        }
+      ]
+    },
+
+    {
+      "id": "heel_chop_l",
+      "name": "Heel Chop (Left)",
+      "stars": 3,
+      "category": "chop",
+      "difficulty": "intermediate",
+      "tags": ["3-star", "heel-chop", "L2", "quick"],
+      "description": "Heel chop to the left — the mirror variation. Equally dangerous when cutting inside from the right flank.",
+      "tips": [
+        "Mirror of Heel Chop Right — the left version is slightly harder for most players",
+        "Great for right-footed wingers on the right side cutting inside",
+        "Sprint beforehand — the chop changes momentum dramatically",
+        "Time it just as the defender lunges to maximize the separation"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 1,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "hold",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["L2"],
+            "svgTargets": ["trigger-l2"]
+          },
+          "beatValue": 0.25,
+          "holdBeats": 1.5,
+          "label": "Hold L2",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "LEFT",
+            "buttons": ["L2"],
+            "svgTargets": ["RIGHT_STICK", "trigger-l2"]
+          },
+          "beatValue": 1.0,
+          "label": "Hold L2 + Flick RS Left (sharp chop)",
+          "tolerance": 40
+        }
+      ]
+    },
+
+    {
+      "id": "scoop_turn_r",
+      "name": "Scoop Turn (Right)",
+      "stars": 3,
+      "category": "feint",
+      "difficulty": "intermediate",
+      "tags": ["3-star", "scoop", "turn", "quick"],
+      "description": "Scoop the ball to the right in a tight turning motion. Quick and deceptive — effective in crowded midfield areas.",
+      "tips": [
+        "RS flick right while stationary produces the cleanest scoop",
+        "Different from a ball roll — this has more of a scooping arc motion",
+        "Works especially well in the final third to create a shot angle",
+        "Combine with a stepover beforehand to compound the defender's confusion"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 1,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "RIGHT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 1.0,
+          "label": "Flick RS Right",
+          "tolerance": 45
+        }
+      ]
+    },
+
+    {
+      "id": "elastico_r",
+      "name": "Elastico (Right)",
+      "stars": 4,
+      "category": "elastico",
+      "difficulty": "advanced",
+      "tags": ["4-star", "elastico", "classic", "advanced"],
+      "description": "Ronaldinho's signature move. Flick the ball to the outside foot, then whip it back past the defender in one fluid motion. One of the most iconic skill moves in football.",
+      "tips": [
+        "Both RS flicks must happen rapidly — there is no pause between them",
+        "The first flick goes to the outside foot (right); the second cuts back hard left",
+        "Practice the two-flick rhythm at slow BPM first, then build up",
+        "Player must have 4★+ skill rating to execute this move",
+        "The return flick angle should be ±15° — precision matters here"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 2,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "RIGHT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.5,
+          "label": "Flick RS Right (outside foot fake)",
+          "tolerance": 35
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "LEFT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.5,
+          "label": "Immediately flick RS Left (snap back)",
+          "tolerance": 35
+        }
+      ]
+    },
+
+    {
+      "id": "reverse_elastico_r",
+      "name": "Reverse Elastico (Right)",
+      "stars": 4,
+      "category": "elastico",
+      "difficulty": "advanced",
+      "tags": ["4-star", "elastico", "reverse", "advanced"],
+      "description": "The inverse of the Elastico — fake to the inside first, then snap to the outside. Less common than the original, which makes it harder to read.",
+      "tips": [
+        "Flick RS LEFT first (inside fake), then snap RIGHT — opposite of regular Elastico",
+        "The surprise element is higher than the regular Elastico at top level",
+        "Chain directly after a regular Elastico for a devastating double fake",
+        "Equally fast rhythm required — don't slow between the two flicks"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 2,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "LEFT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.5,
+          "label": "Flick RS Left (inside fake)",
+          "tolerance": 35
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "RIGHT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.5,
+          "label": "Immediately flick RS Right (snap out)",
+          "tolerance": 35
+        }
+      ]
+    },
+
+    {
+      "id": "advanced_rainbow",
+      "name": "Advanced Rainbow Flick",
+      "stars": 4,
+      "category": "rainbow",
+      "difficulty": "advanced",
+      "tags": ["4-star", "rainbow", "aerial", "advanced"],
+      "description": "Chip the ball over the defender's head in a looping arc. The advanced version includes a final directional flick to guide where the ball lands.",
+      "tips": [
+        "Three-part move: RS down → RS down again → RS up",
+        "The first two RS inputs are slower; the final up flick is sharp",
+        "Use when a defender commits to a slide tackle — the ball sails over them",
+        "High agility and ball control players execute this most effectively",
+        "Practice the rhythm: slow-slow-FAST"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 2,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "DOWN",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.75,
+          "label": "Flick RS Down",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "DOWN",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.75,
+          "label": "Flick RS Down again",
+          "tolerance": 45
+        },
+        {
+          "id": "s3",
+          "step": 3,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "UP",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.5,
+          "label": "Flick RS Up (sharp — launch the ball)",
+          "tolerance": 40
+        }
+      ]
+    },
+
+    {
+      "id": "sombrero_fwd",
+      "name": "Sombrero Flick (Forward)",
+      "stars": 4,
+      "category": "feint",
+      "difficulty": "advanced",
+      "tags": ["4-star", "sombrero", "L1", "aerial", "advanced"],
+      "description": "Lift the ball over the defender with a sombrero touch while using L1 for finesse control. Flick forward to launch it ahead of you.",
+      "tips": [
+        "Hold L1 throughout — this is the skill modifier for the sombrero",
+        "RS flick forward (up) while L1 held lifts the ball over the defender's head",
+        "Requires the player to be stationary or slow-dribbling",
+        "Follow with a sprint to collect the ball ahead of the outrun defender"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 2,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "hold",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["L1"],
+            "svgTargets": ["L1"]
+          },
+          "beatValue": 0.25,
+          "holdBeats": 2.0,
+          "label": "Hold L1",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "UP",
+            "buttons": ["L1"],
+            "svgTargets": ["RIGHT_STICK", "L1"]
+          },
+          "beatValue": 1.0,
+          "label": "Hold L1 + Flick RS Up",
+          "tolerance": 40
+        }
+      ]
+    },
+
+    {
+      "id": "sombrero_back",
+      "name": "Sombrero Flick (Backward)",
+      "stars": 4,
+      "category": "feint",
+      "difficulty": "advanced",
+      "tags": ["4-star", "sombrero", "L1", "aerial", "advanced"],
+      "description": "Lift the ball backward over a chasing defender. Useful for reversing direction while keeping the ball in the air.",
+      "tips": [
+        "Hold L1 + flick RS down — opposite of the forward sombrero",
+        "Most useful when a defender is directly behind you applying pressure",
+        "The ball travels backward — ensure you have the awareness to collect",
+        "Chain with a 180° turn sprint to run onto the airborne ball"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 2,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "hold",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["L1"],
+            "svgTargets": ["L1"]
+          },
+          "beatValue": 0.25,
+          "holdBeats": 2.0,
+          "label": "Hold L1",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "DOWN",
+            "buttons": ["L1"],
+            "svgTargets": ["RIGHT_STICK", "L1"]
+          },
+          "beatValue": 1.0,
+          "label": "Hold L1 + Flick RS Down",
+          "tolerance": 40
+        }
+      ]
+    },
+
+    {
+      "id": "ball_roll_fake",
+      "name": "Ball Roll Fake Turn",
+      "stars": 4,
+      "category": "ball_roll",
+      "difficulty": "advanced",
+      "tags": ["4-star", "ball-roll", "fake", "L2", "turn", "advanced"],
+      "description": "Begin a ball roll, then abruptly reverse direction — the defender follows the fake roll, and you exit the other way.",
+      "tips": [
+        "Start a ball roll right, then immediately flick RS left (or vice versa)",
+        "The fake must be convincing — let the first roll begin before reversing",
+        "Gap between roll and reverse: half a beat maximum",
+        "Devastating in 1v1 situations near the penalty area"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 2,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "hold",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["L2"],
+            "svgTargets": ["trigger-l2"]
+          },
+          "beatValue": 0.25,
+          "holdBeats": 3.0,
+          "label": "Hold L2",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "RIGHT",
+            "buttons": ["L2"],
+            "svgTargets": ["RIGHT_STICK", "trigger-l2"]
+          },
+          "beatValue": 1.0,
+          "label": "Hold L2 + Flick RS Right (fake roll)",
+          "tolerance": 40
+        },
+        {
+          "id": "s3",
+          "step": 3,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "LEFT",
+            "buttons": ["L2"],
+            "svgTargets": ["RIGHT_STICK", "trigger-l2"]
+          },
+          "beatValue": 0.5,
+          "label": "Hold L2 + Flick RS Left (reverse — fast!)",
+          "tolerance": 40
+        }
+      ]
+    },
+
+    {
+      "id": "berba_spin",
+      "name": "Berba Spin",
+      "stars": 4,
+      "category": "feint",
+      "difficulty": "advanced",
+      "tags": ["4-star", "spin", "L2", "advanced", "close-control"],
+      "description": "Named after Dimitar Berbatov. A subtle, controlled spin while shielding the ball — creates separation in tight areas without committing to a full rotation.",
+      "tips": [
+        "Hold L2 + flick RS diagonally (down-right or down-left depending on direction)",
+        "Less flashy than the Roulette but harder to tackle",
+        "Perfect for strikers with their back to goal — spin into shooting position",
+        "Requires precise diagonal RS input — practice the exact angle"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 2,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "hold",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["L2"],
+            "svgTargets": ["trigger-l2"]
+          },
+          "beatValue": 0.25,
+          "holdBeats": 2.0,
+          "label": "Hold L2",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "DOWN_RIGHT",
+            "buttons": ["L2"],
+            "svgTargets": ["RIGHT_STICK", "trigger-l2"]
+          },
+          "beatValue": 1.5,
+          "label": "Hold L2 + Flick RS Down-Right (precise diagonal)",
+          "tolerance": 30
+        }
+      ]
+    },
+
+    {
+      "id": "la_croqueta_l",
+      "name": "La Croqueta (Left)",
+      "stars": 5,
+      "category": "la_croqueta",
+      "difficulty": "expert",
+      "tags": ["5-star", "la-croqueta", "L1", "elite", "iniesta"],
+      "description": "Iniesta's masterpiece. Using the sole of the foot, drag the ball from right to left in a quick, deceptive touch. Executed with L1 + RS flick left — the signature of elite dribblers.",
+      "tips": [
+        "Speed is everything — L1 must be held, then RS flick left immediately",
+        "The move shifts the ball to your left foot while creating a small window to shoot or pass",
+        "Most effective when the defender commits to your right side",
+        "5-star skill players execute the smoothest animation — it matters",
+        "Slow BPM practice first: nail the L1 + RS timing before speeding up"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 3,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "hold",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["L1"],
+            "svgTargets": ["L1"]
+          },
+          "beatValue": 0.25,
+          "holdBeats": 2.0,
+          "label": "Hold L1",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "LEFT",
+            "buttons": ["L1"],
+            "svgTargets": ["RIGHT_STICK", "L1"]
+          },
+          "beatValue": 0.75,
+          "label": "Hold L1 + Flick RS Left (snap)",
+          "tolerance": 35
+        }
+      ]
+    },
+
+    {
+      "id": "la_croqueta_r",
+      "name": "La Croqueta (Right)",
+      "stars": 5,
+      "category": "la_croqueta",
+      "difficulty": "expert",
+      "tags": ["5-star", "la-croqueta", "L1", "elite"],
+      "description": "La Croqueta in the right direction. Drag the ball from left to right with sole touch. Equally effective — master both directions for complete unpredictability.",
+      "tips": [
+        "L1 held + RS flick right — same rhythm as the left version",
+        "The double croqueta (left then right or vice versa) is an advanced combo",
+        "Aim to execute in under 300ms for the most effective in-game result",
+        "Can be used as a fake shot setup: croqueta right, then shoot left"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 3,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "hold",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["L1"],
+            "svgTargets": ["L1"]
+          },
+          "beatValue": 0.25,
+          "holdBeats": 2.0,
+          "label": "Hold L1",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "RIGHT",
+            "buttons": ["L1"],
+            "svgTargets": ["RIGHT_STICK", "L1"]
+          },
+          "beatValue": 0.75,
+          "label": "Hold L1 + Flick RS Right (snap)",
+          "tolerance": 35
+        }
+      ]
+    },
+
+    {
+      "id": "rainbow_flick",
+      "name": "Rainbow Flick",
+      "stars": 5,
+      "category": "rainbow",
+      "difficulty": "expert",
+      "tags": ["5-star", "rainbow", "aerial", "showboating", "elite"],
+      "description": "The ultimate showboat move. Flick the ball up over your own head and the defender in a rainbow arc. Three-beat RS input — one of the most difficult skill moves to time correctly.",
+      "tips": [
+        "Three flicks: RS down (slow), RS down again (medium), RS up (FAST)",
+        "The rhythm is NOT even — slow, slightly faster, then snap up hard",
+        "The final upward flick must cross the FLICK_THRESHOLD in under 80ms",
+        "Only attempt with players who have 5★ skill moves",
+        "Use when a defender is directly in front pressing — the ball sails over them",
+        "Master at 70 BPM before attempting at 100+ BPM"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 3,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "DOWN",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.75,
+          "label": "Flick RS Down (slow)",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "DOWN",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.5,
+          "label": "Flick RS Down again (medium pace)",
+          "tolerance": 45
+        },
+        {
+          "id": "s3",
+          "step": 3,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "UP",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.25,
+          "label": "Flick RS Up — SNAP it hard and fast",
+          "tolerance": 35
+        }
+      ]
+    },
+
+    {
+      "id": "hocus_pocus",
+      "name": "Hocus Pocus",
+      "stars": 5,
+      "category": "elastico",
+      "difficulty": "expert",
+      "tags": ["5-star", "hocus-pocus", "elite", "complex"],
+      "description": "A deceptive two-part rotation that makes the ball appear to go one way, then suddenly shifts the other. Requires precise RS rotation control and is one of the hardest 5-star moves to master.",
+      "tips": [
+        "Two clockwise rotations in quick succession — RS → CW → neutral → CW",
+        "The brief neutral between rotations is critical — don't make it continuous",
+        "Very hard to read at game speed — high 5-star skill players only",
+        "Practice the individual rotations first, then combine",
+        "At 90 BPM this move requires near-perfect timing — start at 60 BPM"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 3,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "rotate_cw",
+          "controller": {
+            "stick": "RS",
+            "direction": "RIGHT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 1.0,
+          "label": "Rotate RS Clockwise 180°",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "UP",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.25,
+          "label": "Brief neutral — flick RS to UP (reset position)",
+          "tolerance": 45
+        },
+        {
+          "id": "s3",
+          "step": 3,
+          "type": "rotate_cw",
+          "controller": {
+            "stick": "RS",
+            "direction": "RIGHT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 1.0,
+          "label": "Rotate RS Clockwise 180° again",
+          "tolerance": 45
+        }
+      ]
+    },
+
+    {
+      "id": "triple_elastico",
+      "name": "Triple Elastico",
+      "stars": 5,
+      "category": "elastico",
+      "difficulty": "expert",
+      "tags": ["5-star", "elastico", "triple", "elite", "combo"],
+      "description": "Three consecutive Elasticos in rapid succession. Devastates defenders who start tracking after the first fake — the third snaps them the wrong way completely.",
+      "tips": [
+        "Three pairs of RS right→left flicks with minimal gap between pairs",
+        "The tempo must be consistent — all three pairs at the same rhythm",
+        "The key is keeping the RS snaps sharp and returning to neutral between pairs",
+        "Slow this down to 60 BPM to learn the rhythm, then build to 110+",
+        "Only attempt in 1v1 situations — too slow for group defenders"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 3,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "RIGHT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.5,
+          "label": "Flick RS Right — #1",
+          "tolerance": 35
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "LEFT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.5,
+          "label": "Flick RS Left — #1 snap",
+          "tolerance": 35
+        },
+        {
+          "id": "s3",
+          "step": 3,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "RIGHT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.5,
+          "label": "Flick RS Right — #2",
+          "tolerance": 35
+        },
+        {
+          "id": "s4",
+          "step": 4,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "LEFT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.5,
+          "label": "Flick RS Left — #2 snap",
+          "tolerance": 35
+        },
+        {
+          "id": "s5",
+          "step": 5,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "RIGHT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.5,
+          "label": "Flick RS Right — #3",
+          "tolerance": 35
+        },
+        {
+          "id": "s6",
+          "step": 6,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "LEFT",
+            "buttons": [],
+            "svgTargets": ["RIGHT_STICK"]
+          },
+          "beatValue": 0.5,
+          "label": "Flick RS Left — #3 final snap",
+          "tolerance": 35
+        }
+      ]
+    },
+
+    {
+      "id": "ball_roll_chop",
+      "name": "Ball Roll to Chop",
+      "stars": 5,
+      "category": "ball_roll",
+      "difficulty": "expert",
+      "tags": ["5-star", "ball-roll", "chop", "L2", "elite"],
+      "description": "Begin a ball roll, then snap into a sharp chop in the perpendicular direction. A two-phase move that changes direction twice — extremely difficult to defend against.",
+      "tips": [
+        "L2 held throughout, RS right for the roll, then RS down for the chop cut",
+        "The LS direction after the chop determines your final exit direction",
+        "Timing between roll and chop: one beat max — faster = more unpredictable",
+        "This is a 5-star move — lesser skilled players execute it slower and less convincingly",
+        "Master Ball Roll and Heel Chop separately before combining"
+      ],
+      "videoUrl": "",
+      "unlockLevel": 3,
+      "inputs": [
+        {
+          "id": "s1",
+          "step": 1,
+          "type": "hold",
+          "controller": {
+            "stick": null,
+            "direction": null,
+            "buttons": ["L2"],
+            "svgTargets": ["trigger-l2"]
+          },
+          "beatValue": 0.25,
+          "holdBeats": 4.0,
+          "label": "Hold L2 throughout",
+          "tolerance": 45
+        },
+        {
+          "id": "s2",
+          "step": 2,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "RIGHT",
+            "buttons": ["L2"],
+            "svgTargets": ["RIGHT_STICK", "trigger-l2"]
+          },
+          "beatValue": 1.0,
+          "label": "Hold L2 + Flick RS Right (start roll)",
+          "tolerance": 40
+        },
+        {
+          "id": "s3",
+          "step": 3,
+          "type": "flick",
+          "controller": {
+            "stick": "RS",
+            "direction": "DOWN",
+            "buttons": ["L2"],
+            "svgTargets": ["RIGHT_STICK", "trigger-l2"]
+          },
+          "beatValue": 0.75,
+          "label": "Hold L2 + Flick RS Down (chop cut — fast!)",
+          "tolerance": 35
+        }
+      ]
+    }
+
+  ],
+
+  "sequences": [
+    {
+      "id": "seq_double_fake",
+      "name": "Double Elastico Fake",
+      "description": "Chain a regular Elastico immediately into a Reverse Elastico. The two-direction fake is nearly impossible to read at game speed.",
+      "difficulty": "advanced",
+      "tags": ["4-star", "elastico", "combo", "double-fake"],
+      "moves": [
+        {
+          "moveId": "elastico_r",
+          "timingNote": "Execute cleanly — the snap must be sharp",
+          "gapBeats": 0
+        },
+        {
+          "moveId": "reverse_elastico_r",
+          "timingNote": "Immediately after — no pause. The defender commits on the first fake.",
+          "gapBeats": 0
+        }
+      ]
+    },
+
+    {
+      "id": "seq_stepover_chain",
+      "name": "Stepover Chain (3x)",
+      "description": "Three consecutive stepovers right, building rhythm and selling the direction change more convincingly each time.",
+      "difficulty": "intermediate",
+      "tags": ["2-star", "stepover", "chain", "rhythm"],
+      "moves": [
+        {
+          "moveId": "stepover_r",
+          "timingNote": "First stepover — sets up the expectation",
+          "gapBeats": 0.5
+        },
+        {
+          "moveId": "stepover_r",
+          "timingNote": "Second — defender starts tracking",
+          "gapBeats": 0.5
+        },
+        {
+          "moveId": "stepover_r",
+          "timingNote": "Third — commit to the burst now",
+          "gapBeats": 0
+        }
+      ]
+    },
+
+    {
+      "id": "seq_ball_roll_fake_shot",
+      "name": "Ball Roll into Fake Shot",
+      "description": "Start a ball roll to create lateral movement, then cancel into a fake shot. The defender reacts to the roll direction, the goalkeeper dives to the fake shot — you have a clear lane.",
+      "difficulty": "intermediate",
+      "tags": ["3-star", "ball-roll", "fake-shot", "combo"],
+      "moves": [
+        {
+          "moveId": "ball_roll_r",
+          "timingNote": "Roll right to pull the defender",
+          "gapBeats": 0.5
+        },
+        {
+          "moveId": "fake_shot",
+          "timingNote": "Fake shot toward the vacated space on the left",
+          "gapBeats": 0
+        }
+      ]
+    },
+
+    {
+      "id": "seq_double_croqueta",
+      "name": "Double La Croqueta",
+      "description": "La Croqueta left immediately into La Croqueta right. Two rapid sole-of-foot touches create a zig-zag that no defender can track.",
+      "difficulty": "expert",
+      "tags": ["5-star", "la-croqueta", "double", "elite"],
+      "moves": [
+        {
+          "moveId": "la_croqueta_l",
+          "timingNote": "Snap left with precision",
+          "gapBeats": 0
+        },
+        {
+          "moveId": "la_croqueta_r",
+          "timingNote": "Immediately right — zero gap. L1 stays held.",
+          "gapBeats": 0
+        }
+      ]
+    },
+
+    {
+      "id": "seq_roulette_sprint",
+      "name": "Roulette into Sprint",
+      "description": "Execute a full roulette spin then immediately release L2 and burst forward. The spin buys time and space; the sprint capitalizes on it.",
+      "difficulty": "intermediate",
+      "tags": ["3-star", "roulette", "sprint", "transition"],
+      "moves": [
+        {
+          "moveId": "roulette_r",
+          "timingNote": "Full 270° CW rotation",
+          "gapBeats": 0
+        },
+        {
+          "moveId": "body_feint_r",
+          "timingNote": "Release L2, feint once, then hold R2 to sprint",
+          "gapBeats": 0.5
+        }
+      ]
+    },
+
+    {
+      "id": "seq_heel_elastico",
+      "name": "Heel-to-Heel into Elastico",
+      "description": "Use the Heel-to-Heel Flick to get the defender moving forward, then snap an Elastico as they close the gap.",
+      "difficulty": "advanced",
+      "tags": ["4-star", "heel", "elastico", "setup-combo"],
+      "moves": [
+        {
+          "moveId": "heel_to_heel",
+          "timingNote": "Quick forward-back flick to bait the defender",
+          "gapBeats": 0.5
+        },
+        {
+          "moveId": "elastico_r",
+          "timingNote": "As they lunge — execute the Elastico",
+          "gapBeats": 0
+        }
+      ]
+    },
+
+    {
+      "id": "seq_berba_croqueta",
+      "name": "Berba Spin into La Croqueta",
+      "description": "The Berba Spin creates confusion about the exit direction. Immediately follow with La Croqueta to fully commit the defender the wrong way before breaking.",
+      "difficulty": "expert",
+      "tags": ["5-star", "berba", "croqueta", "advanced-combo", "elite"],
+      "moves": [
+        {
+          "moveId": "berba_spin",
+          "timingNote": "The spin is the setup — sell it with your LS direction",
+          "gapBeats": 0
+        },
+        {
+          "moveId": "la_croqueta_l",
+          "timingNote": "Croqueta fires before the defender recovers from tracking the spin",
+          "gapBeats": 0
+        }
+      ]
+    },
+
+    {
+      "id": "seq_rainbow_exit",
+      "name": "Rainbow Flick Setup Sequence",
+      "description": "Slow the game with a drag back, reset with a ball roll, then launch the Rainbow Flick when the defender steps in.",
+      "difficulty": "expert",
+      "tags": ["5-star", "rainbow", "drag-back", "setup", "elite"],
+      "moves": [
+        {
+          "moveId": "drag_back",
+          "timingNote": "Reset the play — drag back to create separation",
+          "gapBeats": 1.0
+        },
+        {
+          "moveId": "ball_roll_r",
+          "timingNote": "Roll right to position the ball",
+          "gapBeats": 0.5
+        },
+        {
+          "moveId": "rainbow_flick",
+          "timingNote": "As defender commits to the roll direction — launch the Rainbow",
+          "gapBeats": 0
+        }
+      ]
+    },
+
+    {
+      "id": "seq_five_star_master",
+      "name": "Five-Star Showcase",
+      "description": "A showcase sequence combining three elite 5-star moves: La Croqueta, Hocus Pocus, and the Rainbow Flick. The ultimate skill display.",
+      "difficulty": "expert",
+      "tags": ["5-star", "showcase", "elite", "master"],
+      "moves": [
+        {
+          "moveId": "la_croqueta_l",
+          "timingNote": "Open with the Croqueta — shift left",
+          "gapBeats": 0.5
+        },
+        {
+          "moveId": "hocus_pocus",
+          "timingNote": "While they adjust — execute Hocus Pocus",
+          "gapBeats": 0.25
+        },
+        {
+          "moveId": "rainbow_flick",
+          "timingNote": "Final exclamation mark — Rainbow over the committed defender",
+          "gapBeats": 0
+        }
+      ]
+    },
+
+    {
+      "id": "seq_close_control_escape",
+      "name": "Close Control Escape",
+      "description": "Three moves chained to escape from tight defensive pressure: drag back to reset, heel chop to change direction, then burst with a body feint.",
+      "difficulty": "advanced",
+      "tags": ["3-star", "possession", "escape", "close-control"],
+      "moves": [
+        {
+          "moveId": "drag_back",
+          "timingNote": "Pull away from the initial pressure",
+          "gapBeats": 0.5
+        },
+        {
+          "moveId": "heel_chop_r",
+          "timingNote": "Change direction sharply",
+          "gapBeats": 0
+        },
+        {
+          "moveId": "body_feint_l",
+          "timingNote": "Final feint to open the run channel",
+          "gapBeats": 0.5
+        }
+      ]
+    }
+  ],
+
+  "drills": [
+    {
+      "id": "drill_fundamentals",
+      "name": "Fundamentals Warm-Up",
+      "description": "Start every session with this. Cycle through basic feints and stepovers to warm up your thumbs and calibrate muscle memory.",
+      "moves": ["body_feint_l", "body_feint_r", "stepover_r", "stepover_l", "heel_to_heel"],
+      "repetitions": 3,
+      "bpm": 80,
+      "goals": {
+        "accuracy": 75,
+        "streak": 5
+      }
+    },
+
+    {
+      "id": "drill_ball_roll_mastery",
+      "name": "Ball Roll Mastery",
+      "description": "Perfect the L2 + RS timing for all ball roll variants. Focus on holding L2 cleanly and flicking the RS with precision.",
+      "moves": ["ball_roll_r", "ball_roll_l", "drag_back", "heel_chop_r", "heel_chop_l", "ball_roll_fake"],
+      "repetitions": 4,
+      "bpm": 85,
+      "goals": {
+        "accuracy": 80,
+        "streak": 6
+      }
+    },
+
+    {
+      "id": "drill_elastico_builder",
+      "name": "Elastico Builder",
+      "description": "Build up to the full Elastico from its components. Start with single flicks, then master the rapid two-flick combo.",
+      "moves": ["scoop_turn_r", "elastico_r", "reverse_elastico_r", "elastico_r", "reverse_elastico_r"],
+      "repetitions": 5,
+      "bpm": 90,
+      "goals": {
+        "accuracy": 80,
+        "streak": 4
+      }
+    },
+
+    {
+      "id": "drill_l1_moves",
+      "name": "L1 Modifier Moves",
+      "description": "Build the L1 hold reflex. Every move here requires L1 held — train your left index finger to hold without affecting the LS.",
+      "moves": ["sombrero_fwd", "sombrero_back", "la_croqueta_l", "la_croqueta_r", "la_croqueta_l", "la_croqueta_r"],
+      "repetitions": 4,
+      "bpm": 80,
+      "goals": {
+        "accuracy": 85,
+        "streak": 5
+      }
+    },
+
+    {
+      "id": "drill_five_star_gauntlet",
+      "name": "Five-Star Gauntlet",
+      "description": "The hardest drill. All 5-star moves in sequence at competitive BPM. If you can complete this with 80% accuracy, you are match-ready.",
+      "moves": ["la_croqueta_l", "la_croqueta_r", "rainbow_flick", "hocus_pocus", "triple_elastico", "ball_roll_chop"],
+      "repetitions": 3,
+      "bpm": 100,
+      "goals": {
+        "accuracy": 80,
+        "streak": 3
+      }
+    }
+  ]
+}

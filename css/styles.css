@@ -1,0 +1,347 @@
+/* ─── styles.css ────────────────────────────────────────────────────────────── */
+/* Custom CSS for PS5 Pad Mastery: animations, SVG state classes, and theme.   */
+
+:root {
+  --bg-primary: #0a0a14;
+  --bg-secondary: #111120;
+  --bg-card: #1a1a2e;
+  --accent-blue: #3b82f6;
+  --accent-cyan: #06b6d4;
+  --accent-green: #10b981;
+  --accent-yellow: #f59e0b;
+  --accent-red: #ef4444;
+  --text-primary: #e0e0e8;
+  --text-muted: #6b7280;
+  --border-subtle: rgba(255,255,255,0.08);
+}
+
+/* ── Base ── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── SVG Controller ── */
+.pad-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 22px;
+}
+.pad-wrap svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#pad-svg g[data-btn] {
+  pointer-events: auto;
+  cursor: pointer;
+}
+#pad-svg g[data-btn] path,
+#pad-svg g[data-btn] circle {
+  stroke: rgba(255,255,255,0.1);
+  stroke-width: 0.8;
+  transition: stroke 80ms ease, filter 80ms ease, fill 80ms ease;
+}
+
+/* ── Controller State Classes ── */
+.ctrl-idle path,
+.ctrl-idle circle {
+  stroke: rgba(255,255,255,0.1);
+  fill: none;
+  filter: none;
+}
+
+.ctrl-next path,
+.ctrl-next circle {
+  stroke: var(--accent-blue) !important;
+  stroke-width: 1.5 !important;
+  fill: rgba(59,130,246,0.12) !important;
+  animation: pulse-glow 600ms ease infinite;
+}
+
+.ctrl-active path,
+.ctrl-active circle {
+  stroke: var(--accent-cyan) !important;
+  stroke-width: 2 !important;
+  fill: rgba(6,182,212,0.18) !important;
+  filter: drop-shadow(0 0 12px var(--accent-cyan));
+}
+
+.ctrl-perfect path,
+.ctrl-perfect circle {
+  stroke: var(--accent-green) !important;
+  stroke-width: 2 !important;
+  fill: rgba(16,185,129,0.3) !important;
+  animation: flash-perfect 400ms ease;
+}
+
+.ctrl-good path,
+.ctrl-good circle {
+  stroke: var(--accent-yellow) !important;
+  stroke-width: 2 !important;
+  fill: rgba(245,158,11,0.18) !important;
+  animation: flash-good 400ms ease;
+}
+
+.ctrl-ok path,
+.ctrl-ok circle {
+  stroke: #f97316 !important;
+  stroke-width: 1.5 !important;
+  fill: rgba(249,115,22,0.15) !important;
+  animation: flash-ok 400ms ease;
+}
+
+.ctrl-miss path,
+.ctrl-miss circle {
+  stroke: var(--accent-red) !important;
+  stroke-width: 2 !important;
+  fill: rgba(239,68,68,0.25) !important;
+  animation: flash-miss 400ms ease;
+}
+
+.ctrl-hold path,
+.ctrl-hold circle {
+  stroke: var(--accent-cyan) !important;
+  stroke-width: 2 !important;
+  fill: rgba(6,182,212,0.25) !important;
+  filter: drop-shadow(0 0 10px var(--accent-cyan));
+}
+
+/* Physical press mirror (dimmer) */
+.ctrl-pressed path,
+.ctrl-pressed circle {
+  stroke: rgba(6,182,212,0.4) !important;
+  stroke-width: 1.2 !important;
+  fill: rgba(6,182,212,0.08) !important;
+}
+
+/* ── Trigger Indicators ── */
+.trigger-indicator {
+  position: absolute;
+  top: 0;
+  width: 52px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.25);
+  font-family: 'SF Mono', 'Inter', monospace;
+  letter-spacing: 0.05em;
+  transition: background 60ms ease, border-color 60ms ease, box-shadow 60ms ease, color 60ms ease;
+  pointer-events: none;
+  z-index: 5;
+}
+.trigger-indicator.active {
+  border-color: var(--accent-cyan);
+  background: rgba(6,182,212,0.2);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 14px rgba(6,182,212,0.5);
+}
+#trigger-l2 { left: 8%; }
+#trigger-r2 { right: 8%; }
+
+/* ── Stick Knobs ── */
+.stick-knob {
+  transition: transform 50ms linear;
+  will-change: transform;
+}
+
+/* ── Stick Direction Arrows ── */
+.stick-arrow {
+  opacity: 0;
+  transition: opacity 100ms ease, transform 100ms ease;
+}
+.stick-arrow.show {
+  opacity: 1;
+}
+.stick-arrow.active-arrow {
+  opacity: 1;
+  filter: drop-shadow(0 0 4px var(--accent-cyan));
+}
+
+/* ── Lightbar ── */
+#LIGHTBAR {
+  transition: fill 150ms ease;
+}
+
+/* ── Beat Ring ── */
+#beat-ring {
+  transition: opacity 100ms ease;
+}
+
+/* ── Keyframe Animations ── */
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 4px var(--accent-blue)); }
+  50%      { filter: drop-shadow(0 0 16px #60a5fa); }
+}
+
+@keyframes flash-perfect {
+  0%   { stroke: var(--accent-green); fill: rgba(16,185,129,0.3); filter: drop-shadow(0 0 20px var(--accent-green)); }
+  100% { stroke: rgba(255,255,255,0.1); fill: none; filter: none; }
+}
+
+@keyframes flash-good {
+  0%   { stroke: var(--accent-yellow); fill: rgba(245,158,11,0.3); filter: drop-shadow(0 0 16px var(--accent-yellow)); }
+  100% { stroke: rgba(255,255,255,0.1); fill: none; filter: none; }
+}
+
+@keyframes flash-ok {
+  0%   { stroke: #f97316; fill: rgba(249,115,22,0.2); filter: drop-shadow(0 0 12px #f97316); }
+  100% { stroke: rgba(255,255,255,0.1); fill: none; filter: none; }
+}
+
+@keyframes flash-miss {
+  0%   { stroke: var(--accent-red); fill: rgba(239,68,68,0.25); filter: drop-shadow(0 0 16px var(--accent-red)); }
+  100% { stroke: rgba(255,255,255,0.1); fill: none; filter: none; }
+}
+
+@keyframes beat-pulse {
+  0%   { transform: scale(1); opacity: 0.4; }
+  30%  { transform: scale(1.04); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 0.4; }
+}
+
+@keyframes tag-in {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes countdown-bar {
+  from { width: 100%; }
+  to   { width: 0%; }
+}
+
+/* ── Toast ── */
+.toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.toast {
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  animation: tag-in 200ms ease;
+  pointer-events: auto;
+  max-width: 360px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.toast.success { background: #065f46; color: #d1fae5; border: 1px solid var(--accent-green); }
+.toast.error   { background: #7f1d1d; color: #fee2e2; border: 1px solid var(--accent-red); }
+.toast.info    { background: #1e3a5f; color: #dbeafe; border: 1px solid var(--accent-blue); }
+
+/* ── Status Dot ── */
+.status-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  box-shadow: 0 0 8px var(--accent-red);
+  transition: background 300ms;
+  display: inline-block;
+}
+.status-dot.connected {
+  background: var(--accent-green);
+  box-shadow: 0 0 12px var(--accent-green);
+}
+
+/* ── Move Cards ── */
+.move-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 0.85rem;
+  cursor: pointer;
+  transition: border-color 150ms, transform 150ms, box-shadow 150ms;
+}
+.move-card:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(59,130,246,0.15);
+}
+.move-card.selected {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 16px rgba(6,182,212,0.2);
+}
+
+/* ── Score Overlay ── */
+.score-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade-in 200ms ease;
+}
+.score-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 440px;
+  width: 90%;
+  text-align: center;
+  animation: slide-up 300ms ease;
+}
+
+/* ── Beat Dots ── */
+.beat-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  transition: background 100ms, box-shadow 100ms;
+  display: inline-block;
+}
+.beat-dot.active {
+  background: var(--accent-cyan);
+  box-shadow: 0 0 10px var(--accent-cyan);
+}
+
+/* ── Step Progress Dots ── */
+.step-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  transition: all 200ms;
+}
+.step-dot.done   { background: var(--accent-green); }
+.step-dot.current { background: var(--accent-cyan); animation: pulse-glow 600ms ease infinite; }
+.step-dot.miss   { background: var(--accent-red); }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* ── Utility ── */
+.hidden { display: none !important; }

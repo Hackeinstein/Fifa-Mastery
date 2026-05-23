@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PS5 Pad Mastery — Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-[#0a0a14] text-[#e0e0e8] min-h-screen">
+    <!-- ═══ HEADER ═══ -->
+    <header class="border-b border-[rgba(255,255,255,0.08)] bg-[#111120] sticky top-0 z-50">
+        <div class="max-w-[1400px] mx-auto px-4 py-2 flex items-center gap-4 flex-wrap">
+            <a href="index.html" class="text-lg font-bold text-[#06b6d4] whitespace-nowrap flex items-center gap-2 no-underline">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+                PS5 Pad Mastery
+            </a>
+            <div class="flex items-center gap-2 ml-auto md:ml-4">
+                <button id="btn-bpm-toggle" class="px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#1a1a2e] text-[#6b7280] hover:border-[#06b6d4] hover:text-[#06b6d4] transition cursor-pointer text-xs font-semibold tracking-wide">♩ BPM</button>
+                <div id="bpm-controls" style="display:none" class="flex items-center gap-2">
+                    <button id="btn-bpm-down" class="w-8 h-8 rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#1a1a2e] text-[#e0e0e8] hover:border-[#06b6d4] transition cursor-pointer font-bold text-lg flex items-center justify-center">−</button>
+                    <div class="flex flex-col items-center min-w-[70px]">
+                        <input id="bpm-slider" type="range" min="40" max="200" value="90" class="w-full h-1.5 bg-[rgba(255,255,255,0.1)] rounded-lg appearance-none cursor-pointer accent-[#06b6d4]" />
+                        <span id="bpm-display" class="text-xl font-bold text-[#06b6d4] tabular-nums">90</span>
+                        <span class="text-[10px] text-[#6b7280] uppercase tracking-wider">BPM</span>
+                    </div>
+                    <button id="btn-bpm-up" class="w-8 h-8 rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#1a1a2e] text-[#e0e0e8] hover:border-[#06b6d4] transition cursor-pointer font-bold text-lg flex items-center justify-center">+</button>
+                    <button id="btn-tap-tempo" class="px-3 py-1.5 rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#1a1a2e] text-[#6b7280] hover:border-[#f59e0b] hover:text-[#f59e0b] transition cursor-pointer text-xs font-semibold tracking-wide">TAP</button>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button id="btn-settings" class="w-9 h-9 rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#1a1a2e] text-[#6b7280] hover:border-[#06b6d4] hover:text-[#06b6d4] transition cursor-pointer flex items-center justify-center">&#x2699;</button>
+                <button id="btn-stats" class="w-9 h-9 rounded-lg border border-[rgba(255,255,255,0.1)] bg-[#1a1a2e] text-[#6b7280] hover:border-[#06b6d4] hover:text-[#06b6d4] transition cursor-pointer flex items-center justify-center">&#x1F4CA;</button>
+            </div>
+        </div>
+        <div class="max-w-[1400px] mx-auto px-4 pb-2 flex items-center gap-4 text-xs text-[#6b7280]">
+            <div class="flex items-center gap-1.5">
+                <span id="status-dot" class="status-dot"></span>
+                <span id="status-text">No controller</span>
+            </div>
+            <span id="controller-name" class="hidden md:inline"></span>
+            <span class="hidden sm:inline">|</span>
+            <span class="hidden sm:inline">Beat:</span>
+            <span id="beat-dots" class="flex gap-1">
+                <span class="beat-dot"></span><span class="beat-dot"></span><span class="beat-dot"></span><span class="beat-dot"></span>
+            </span>
+        </div>
+    </header>
+
+    <!-- ═══ SETTINGS PANEL ═══ -->
+    <div id="settings-panel" class="hidden fixed right-0 top-0 h-full w-80 bg-[#111120] border-l border-[rgba(255,255,255,0.08)] z-[100] p-4 overflow-y-auto shadow-2xl">
+        <div class="flex items-center justify-between mb-4">
+            <h3 class="text-sm font-bold text-[#e0e0e8]">Settings</h3>
+            <button onclick="document.getElementById('settings-panel').classList.add('hidden')" class="text-[#6b7280] hover:text-[#e0e0e8] cursor-pointer bg-none border-none text-lg">&times;</button>
+        </div>
+        <div class="space-y-4">
+            <div><label class="text-xs text-[#6b7280] block mb-1">Volume</label><input type="range" data-setting="volume" min="0" max="1" step="0.05" value="0.5" class="w-full accent-[#06b6d4]" /></div>
+            <div class="flex items-center justify-between"><label class="text-xs text-[#6b7280]">Show Hints</label><input type="checkbox" data-setting="showHints" checked class="accent-[#06b6d4] w-4 h-4" /></div>
+            <div class="flex items-center justify-between"><label class="text-xs text-[#6b7280]">Strict Mode</label><input type="checkbox" data-setting="strictMode" class="accent-[#06b6d4] w-4 h-4" /></div>
+            <div class="border-t border-[rgba(255,255,255,0.08)] pt-3">
+                <div class="text-xs font-semibold text-[#e0e0e8] mb-2">Button Layout</div>
+                <div class="flex gap-1 mb-1">
+                    <button data-preset="standard" class="layout-preset-btn flex-1 py-1 text-xs rounded-lg border cursor-pointer transition">Standard</button>
+                    <button data-preset="alt" class="layout-preset-btn flex-1 py-1 text-xs rounded-lg border cursor-pointer transition">Alternate</button>
+                    <button data-preset="custom" class="layout-preset-btn flex-1 py-1 text-xs rounded-lg border cursor-pointer transition">Custom</button>
+                </div>
+                <div id="layout-desc" class="text-[10px] text-[#6b7280] mb-2"></div>
+                <div id="input-map-grid" style="display:none" class="space-y-1.5"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ STATS PANEL ═══ -->
+    <div id="stats-panel" class="hidden fixed right-0 top-0 h-full w-80 bg-[#111120] border-l border-[rgba(255,255,255,0.08)] z-[100] overflow-y-auto shadow-2xl">
+        <div class="flex items-center justify-between p-4 border-b border-[rgba(255,255,255,0.08)]">
+            <h3 class="text-sm font-bold text-[#e0e0e8]">Stats</h3>
+            <button onclick="document.getElementById('stats-panel').classList.add('hidden')" class="text-[#6b7280] hover:text-[#e0e0e8] cursor-pointer bg-none border-none text-lg">&times;</button>
+        </div>
+        <div id="stats-content"></div>
+    </div>
+
+    <!-- ═══ MAIN LAYOUT ═══ -->
+    <main class="max-w-[1400px] mx-auto p-4">
+        <div class="flex flex-col lg:flex-row gap-4">
+            <!-- LEFT: Skills / Reaction / Coordination -->
+            <div class="w-full lg:w-72 xl:w-80 flex-shrink-0 flex flex-col gap-2">
+                <!-- Tabs -->
+                <div class="flex gap-1">
+                    <button id="tab-skills" class="flex-1 py-1.5 px-2 rounded-lg text-xs font-semibold border cursor-pointer transition" style="background:#06b6d4;color:#000;border-color:#06b6d4" data-tab="skills">Skills</button>
+                    <button id="tab-reaction" class="flex-1 py-1.5 px-2 rounded-lg text-xs font-semibold border border-[rgba(255,255,255,0.08)] bg-[#1a1a2e] text-[#6b7280] cursor-pointer transition hover:border-[#06b6d4] hover:text-[#06b6d4]" data-tab="reaction">Reaction</button>
+                    <button id="tab-coord" class="flex-1 py-1.5 px-2 rounded-lg text-xs font-semibold border border-[rgba(255,255,255,0.08)] bg-[#1a1a2e] text-[#6b7280] cursor-pointer transition hover:border-[#10b981] hover:text-[#10b981]" data-tab="coord">Coordination</button>
+                </div>
+                <!-- Library panel (Skills tab) -->
+                <div id="library-panel">
+                    <!-- View switcher: Moves / Sequences / Drills -->
+                    <div class="flex gap-1 mb-2">
+                        <button class="lib-view-btn flex-1 py-1 text-xs rounded-lg border cursor-pointer transition" data-view="moves" style="background:#06b6d4;color:#000;border-color:#06b6d4">Moves</button>
+                        <button class="lib-view-btn flex-1 py-1 text-xs rounded-lg border border-[rgba(255,255,255,0.08)] text-[#6b7280] cursor-pointer transition hover:border-[#3b82f6] hover:text-[#3b82f6]" data-view="sequences">Sequences</button>
+                        <button class="lib-view-btn flex-1 py-1 text-xs rounded-lg border border-[rgba(255,255,255,0.08)] text-[#6b7280] cursor-pointer transition hover:border-[#10b981] hover:text-[#10b981]" data-view="drills">Drills</button>
+                    </div>
+                    <div id="moves-filters" class="mb-3 space-y-2">
+                        <input id="search-moves" type="text" placeholder="Search moves..." class="w-full px-3 py-2 bg-[#1a1a2e] border border-[rgba(255,255,255,0.08)] rounded-lg text-sm text-[#e0e0e8] placeholder-[#6b7280] outline-none focus:border-[#3b82f6] transition" />
+                        <div class="flex gap-1.5">
+                            <select id="filter-category" class="flex-1 px-2 py-1.5 bg-[#1a1a2e] border border-[rgba(255,255,255,0.08)] rounded-lg text-xs text-[#e0e0e8] outline-none focus:border-[#3b82f6] cursor-pointer"></select>
+                        </div>
+                        <div class="flex gap-1 flex-wrap">
+                            <button class="star-filter-btn px-2 py-1 rounded-md text-xs border border-[rgba(255,255,255,0.08)] bg-[#1a1a2e] text-[#6b7280] hover:border-[#f59e0b] hover:text-[#f59e0b] transition cursor-pointer" data-star="1">★1</button>
+                            <button class="star-filter-btn px-2 py-1 rounded-md text-xs border border-[rgba(255,255,255,0.08)] bg-[#1a1a2e] text-[#6b7280] hover:border-[#f59e0b] hover:text-[#f59e0b] transition cursor-pointer" data-star="2">★2</button>
+                            <button class="star-filter-btn px-2 py-1 rounded-md text-xs border border-[rgba(255,255,255,0.08)] bg-[#1a1a2e] text-[#6b7280] hover:border-[#f59e0b] hover:text-[#f59e0b] transition cursor-pointer" data-star="3">★3</button>
+                            <button class="star-filter-btn px-2 py-1 rounded-md text-xs border border-[rgba(255,255,255,0.08)] bg-[#1a1a2e] text-[#6b7280] hover:border-[#f59e0b] hover:text-[#f59e0b] transition cursor-pointer" data-star="4">★4</button>
+                            <button class="star-filter-btn px-2 py-1 rounded-md text-xs border border-[rgba(255,255,255,0.08)] bg-[#1a1a2e] text-[#6b7280] hover:border-[#f59e0b] hover:text-[#f59e0b] transition cursor-pointer" data-star="5">★5</button>
+                        </div>
+                    </div>
+                    <div id="library-grid" class="space-y-2 max-h-[calc(100vh-370px)] overflow-y-auto pr-1"></div>
+                </div>
+                <!-- Training panel (Reaction / Coordination tabs) -->
+                <div id="training-panel" style="display:none;max-height:calc(100vh - 200px)" class="bg-[#111120] border border-[rgba(255,255,255,0.08)] rounded-xl p-4 overflow-y-auto"></div>
+            </div>
+
+            <!-- CENTER: Virtual Controller -->
+            <div class="flex-1 flex flex-col items-center justify-start min-w-0">
+                <div class="pad-wrap">
+                    <div id="trigger-l2" class="trigger-indicator">L2</div>
+                    <div id="trigger-r2" class="trigger-indicator">R2</div>
+                    <svg id="pad-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 384">
+                        <defs><linearGradient id="lightbarGradient" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="white" stop-opacity="1"/><stop offset="70%" stop-color="white" stop-opacity="0.5"/><stop offset="90%" stop-color="rgba(0,0,0,0.33)" stop-opacity="1"/></linearGradient></defs>
+                        <g id="AG-OUTLINE" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1.3"><path d="m148.516 16.996-1.496-8.413c-.017-.086-.034-.179-.054-.265a5.016 5.016 0 0 0-3.934-3.778c-7.759-1.45-15.73-2.089-23.612-1.508-5.65.413-11.41 1.05-16.902 2.476C93.46 7.835 84.975 12.16 77.078 17.1l-1.672 1.063-.054.035-.053.036a5.017 5.017 0 0 0-2.125 3.361l-1.208 7.702-5.178 1.156-.07.017-.069.017-.069.018-.069.02-.069.018-.069.02a8 8 0 0 0-1.14.438c-1.223.585-2.28 1.483-3.16 2.507-.864 1.005-1.582 2.137-2.197 3.308-7.499 15.888-15.012 33.244-21.41 49.6-12.782 32.781-23.254 66.97-28.896 101.74-3.162 18.87-4.82 39.283-6.098 58.392-1.215 20.801-1.59 42.132 1.213 62.82 1.88 13.54 4.76 27.167 10.18 39.764 2.958 6.757 6.78 13.375 12.445 18.22 4.684 4.055 10.444 6.645 16.292 8.543 5.411 1.75 11.034 3.044 16.641 3.98 3.101.503 6.307.923 9.44 1.142 2.233.153 4.522.232 6.753.08 1.328-.103 2.65-.29 3.91-.727a9.6 9.6 0 0 0 2.863-1.559c1.407-1.112 2.505-2.575 3.464-4.078.37-.578.747-1.229 1.083-1.825.817-1.47 1.856-3.542 2.592-5.092 6.82-14.654 14.115-32.236 20.083-47.294 3.92-9.749 9.145-24.786 12.684-34.853 2.504-6.803 5.194-13.75 9.223-19.808 2.214-3.344 4.847-6.437 7.867-9.079 2.178-1.925 4.595-3.622 7.205-4.908 3.646-1.81 7.64-2.889 11.643-3.555 5.327-.884 10.88-1.087 16.277-1.042 2.994.034 6.558.185 9.547.376 25.384 1.685 54.554 2.527 80.061 2.666 40.731.158 88.313.063 128.718-2.814 4.912-.248 10.147-.34 15.06-.063 5.16.301 10.377.967 15.305 2.575 2.777.91 5.481 2.167 7.915 3.79 5.138 3.458 9.366 8.188 12.61 13.442 2.875 4.638 5.062 9.762 7.011 14.848 3.236 8.762 8.187 23.38 11.536 32.038 4.8 12.432 11.214 28.113 16.546 40.37 2.285 5.24 5.304 12.07 7.93 17.167l.45.836.221.4.22.388c.38.682.857 1.434 1.29 2.088.852 1.262 1.837 2.48 3.038 3.427a9.6 9.6 0 0 0 2.728 1.511c1.411.508 2.916.706 4.406.798 4.542.225 9.136-.274 13.63-.903 6.357-.945 12.724-2.345 18.844-4.322 5.846-1.899 11.612-4.487 16.292-8.543 5.992-5.133 9.923-12.22 12.952-19.407 5.082-12.267 7.862-25.46 9.673-38.577 2.8-20.687 2.437-42.02 1.213-62.82-1.31-19.114-2.935-39.513-6.098-58.392-5.644-34.769-16.109-68.963-28.897-101.739-6.415-16.342-13.892-33.73-21.41-49.6-.643-1.22-1.393-2.402-2.309-3.437-.873-.987-1.914-1.85-3.114-2.409a8 8 0 0 0-.8-.32c-.153-.057-.324-.1-.48-.145-.063-.015-.146-.038-.208-.052l-5.178-1.156-1.208-7.702c.001-.03-.02-.096-.02-.126a5.034 5.034 0 0 0-1.69-2.92c-.248-.246-1.857-1.226-2.192-1.448-7.898-4.94-16.38-9.264-25.44-11.59-5.493-1.427-11.253-2.064-16.903-2.477-7.88-.58-15.853.056-23.612 1.508a5.01 5.01 0 0 0-3.933 3.778c-.018.085-.04.178-.054.265l-1.496 8.413c-2.134.13-4.29.39-6.368.903-11.69-2.736-24.075-4.398-36.01-5.715-31.636-4.576-65.15-4.894-97.104-5.022-31.962.13-65.456.445-97.104 5.022-11.938 1.318-24.316 2.98-36.01 5.715-2.08-.515-4.238-.775-6.372-.905"/></g>
+                        <g id="L1" data-btn="L1" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="m 148.515,16.996 -1.496,-8.413 c -0.009,-0.076 -0.041,-0.18 -0.052,-0.255 -0.077,-0.336 -0.194,-0.671 -0.339,-0.984 -0.463,-0.999 -1.267,-1.835 -2.247,-2.337 -0.307,-0.158 -0.637,-0.287 -0.97,-0.378 -1.348,-0.289 -3.242,-0.582 -4.602,-0.788 -4.195,-0.621 -8.491,-0.998 -12.733,-1.02 -4.481,-0.034 -9.104,0.343 -13.555,0.863 -4.701,0.546 -9.432,1.5 -13.935,2.968 -7.583,2.454 -14.765,6.232 -21.508,10.448 -0.306,0.208 -1.935,1.193 -2.156,1.419 -0.352,0.292 -0.667,0.637 -0.926,1.014 -0.325,0.472 -0.568,1.003 -0.715,1.557 -0.044,0.162 -0.078,0.339 -0.106,0.505 l -1.208,7.702 c 16.22576,-3.555486 30.92985,-6.722958 48.02494,-9.827135 8.83902,-1.380369 19.25539,-2.890306 28.52306,-2.473865 z"/></g>
+                        <g id="R1" data-btn="R1" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="m 427.483,16.996 1.496,-8.413 c 0.009,-0.076 0.041,-0.18 0.052,-0.255 0.077,-0.336 0.194,-0.671 0.339,-0.984 0.463,-0.999 1.267,-1.835 2.247,-2.337 0.307,-0.158 0.637,-0.287 0.97,-0.378 1.348,-0.289 3.242,-0.582 4.602,-0.788 4.195,-0.621 8.491,-0.998 12.733,-1.02 4.481,-0.034 9.104,0.343 13.555,0.863 4.701,0.546 9.432,1.5 13.935,2.968 7.583,2.454 14.765,6.232 21.508,10.448 0.306,0.208 1.935,1.193 2.156,1.419 0.352,0.292 0.667,0.637 0.926,1.014 0.325,0.472 0.568,1.003 0.715,1.557 0.044,0.162 0.078,0.339 0.106,0.505 l 1.208,7.702 c -16.22576,-3.55549 -30.92985,-6.72296 -48.02494,-9.82714 -8.83902,-1.38037 -19.25539,-2.8903 -28.52306,-2.47386 z"/></g>
+                        <g id="DPAD_UP" data-btn="D-Up" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="M116.725 65.168c2.712.004 5.723.616 7.511 2.827.918 1.121 1.416 2.533 1.628 3.954.138.913.167 1.85.131 2.773-.008.702-1.466 14.632-1.582 15.605-.07.41-.21.811-.408 1.177a3.9 3.9 0 0 1-.622.846l-10.646 10.97-.047.047-.048.047a3.86 3.86 0 0 1-3.977.843 3.84 3.84 0 0 1-1.449-.938L96.57 92.35c-.017-.028-.073-.068-.09-.096a3.859 3.859 0 0 1-.977-2.188l-1.45-14.035c-.172-1.697-.178-3.445.241-5.108.267-1.058.728-2.08 1.422-2.928a6.8 6.8 0 0 1 2.405-1.848c.855-.4 1.78-.65 2.711-.798a15 15 0 0 1 1.608-.16c3.75-.078 10.532-.042 14.285-.02"/></g>
+                        <g id="DPAD_DOWN" data-btn="D-Down" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="M103.228 158.638c-2.712-.004-5.723-.616-7.51-2.827-.919-1.12-1.417-2.533-1.629-3.954a15 15 0 0 1-.13-2.773c.007-.702 1.465-14.632 1.581-15.605a3.854 3.854 0 0 1 1.03-2.023l10.646-10.969.047-.048.048-.047a3.86 3.86 0 0 1 3.977-.843 3.84 3.84 0 0 1 1.45.938l10.645 10.97c.017.027.073.067.09.095a3.859 3.859 0 0 1 .977 2.188l1.451 14.035c.171 1.697.177 3.445-.242 5.108-.267 1.058-.728 2.08-1.422 2.928a6.8 6.8 0 0 1-2.405 1.848c-.855.401-1.78.651-2.71.798a15 15 0 0 1-1.609.161c-3.75.077-10.533.041-14.285.02"/></g>
+                        <g id="DPAD_LEFT" data-btn="D-Left" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="M63.241 105.154c.004-2.712.616-5.723 2.827-7.51 1.121-.919 2.533-1.417 3.954-1.629.913-.138 1.85-.167 2.773-.13.702.007 14.632 1.465 15.605 1.581.41.071.811.21 1.177.408.307.167.595.378.846.622l10.97 10.646.047.047.047.048a3.86 3.86 0 0 1 .843 3.977 3.84 3.84 0 0 1-.938 1.45l-10.969 10.645c-.028.017-.068.073-.096.09a3.859 3.859 0 0 1-2.188.977l-14.035 1.451c-1.697.171-3.445.177-5.108-.242-1.058-.267-2.08-.728-2.928-1.422a6.8 6.8 0 0 1-1.848-2.405c-.4-.855-.65-1.78-.798-2.71a15 15 0 0 1-.16-1.609c-.078-3.75-.042-10.532-.02-14.285"/></g>
+                        <g id="DPAD_RIGHT" data-btn="D-Right" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="M156.676 118.887c-.018 2.712-.644 5.72-2.865 7.496-1.126.913-2.54 1.404-3.962 1.608-.914.133-1.85.158-2.773.117-.702-.01-14.625-1.54-15.597-1.66a3.86 3.86 0 0 1-2.017-1.04l-10.915-10.7-.047-.048-.047-.048a3.858 3.858 0 0 1-.196-5.081c.098-.119.206-.238.317-.344l11.022-10.59c.028-.016.07-.072.096-.09a3.86 3.86 0 0 1 2.193-.965l14.042-1.38c1.698-.162 3.446-.16 5.107.268 1.056.273 2.077.74 2.921 1.437a6.8 6.8 0 0 1 1.836 2.415c.397.857.642 1.783.784 2.715.08.53.13 1.075.152 1.61.06 3.745-.01 10.527-.05 14.28"/></g>
+                        <g id="TRIANGLE" data-btn="△" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="M465.492 50.882c-6.332-.023-12.397 3.26-15.84 8.573-6.33 9.717-2.538 22.766 8.014 27.577 4.898 2.252 10.755 2.252 15.653 0 10.551-4.81 14.344-17.86 8.014-27.577-3.445-5.314-9.509-8.596-15.84-8.573"/></g>
+                        <g id="CIRCLE" data-btn="◯" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="M526.391 111.781c.023-6.332-3.259-12.397-8.573-15.84-9.717-6.33-22.766-2.538-27.577 8.013-2.252 4.898-2.252 10.755 0 15.653 4.811 10.551 17.861 14.344 27.577 8.014 5.314-3.443 8.596-9.508 8.573-15.84"/></g>
+                        <g id="CROSS" data-btn="✕" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="M465.492 134.836c-6.332-.023-12.397 3.26-15.84 8.573-6.33 9.717-2.538 22.766 8.014 27.577 4.898 2.252 10.755 2.252 15.653 0 10.551-4.81 14.344-17.86 8.014-27.577-3.445-5.313-9.509-8.595-15.84-8.573"/></g>
+                        <g id="SQUARE" data-btn="□" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="M442.436 111.781c.023-6.332-3.259-12.397-8.573-15.84-9.717-6.33-22.766-2.538-27.577 8.013-2.252 4.898-2.252 10.755 0 15.653 4.811 10.551 17.861 14.344 27.577 8.014 5.314-3.443 8.596-9.508 8.573-15.84"/></g>
+                        <g id="CREATE" data-btn="Create" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="M151.735 36.35a6.5 6.5 0 0 0-3.24 1.81 6.51 6.51 0 0 0-1.687 5.95c.026.072 2.924 13.123 2.945 13.187a6.5 6.5 0 0 0 .996 2.232 6.5 6.5 0 0 0 3.045 2.366 6.5 6.5 0 0 0 3.702.26 6.505 6.505 0 0 0 4.941-7.689c.001-.048-2.94-13.13-2.944-13.189a6.5 6.5 0 0 0-4.057-4.668 6.5 6.5 0 0 0-3.7-.259"/></g>
+                        <g id="OPTIONS" data-btn="Options" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="M424.263 36.35a6.5 6.5 0 0 1 3.24 1.81 6.49 6.5 0 0 1 1.686 5.95c-.026.072-2.924 13.123-2.945 13.187a6.5 6.5 0 0 1-.996 2.232 6.5 6.5 0 0 1-3.045 2.366 6.5 6.5 0 0 1-3.702.26 6.505 6.505 0 0 1-4.941-7.689c0-.048 2.94-13.13 2.944-13.189a6.5 6.5 0 0 1 4.057-4.668 6.5 6.5 0 0 1 3.702-.259"/></g>
+                        <g id="PS" data-btn="PS" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path transform="translate(-67.841 -41.515)" d="m362.73 219.218-.2-.119-.202-.115-.204-.111-.206-.108-.208-.105-.209-.1-.212-.097-.212-.094-.215-.089-.216-.086-.217-.082-.219-.079-.221-.074-.221-.071-.223-.067-.224-.063-.224-.059-.226-.055-.227-.051-.228-.047-.228-.044-.229-.039-.23-.035-.23-.031-.231-.028-.232-.023-.231-.019-.232-.015-.233-.011-.232-.007-.232-.003-.233.001-.232.005-.233.009-.232.013-.232.017-.231.021-.231.025-.231.03-.23.033-.23.037-.228.042-.228.045-.228.049-.226.053-.225.057-.225.061-.223.065-.222.069-.221.072-.219.077-.219.08-.216.084-.216.088-.213.091-.212.096-.211.099-.209.102-.206.106-.205.11-.203.113-.201.117-.199.121-.197.123-.195.128-.192.13-.19.134-.188.137-.185.14-.183.144-.18.147-.178.15-.175.153-.173.156-.169.159-.167.161-.164.165-.161.168-.159.17-.155.173-.152.176-.149.178-.146.181-.143.184-.139.186-.137.188-.133.191-.129.193-.127.195-.123.197-.119.2-.116.201-.113.204-.108.205-.106.207-.101.209-.098.211-.095.213-.09.214-.087.216-.083.217-.08.218-.075.22-.072.221-.067.223-.064.223-.06.225-.056.225-.053.227-.048.227-.044.229-.04.229-.037.229-.032.231-.028.23-.024.232-.021.231-.016.232-.012.232-.008.233-.004.232v.233l.004.232.008.232.012.233.016.231.021.232.024.231.028.231.032.23.037.23.04.229.044.228.048.228.053.226.056.226.06.224.064.224.067.222.072.221.075.22.08.219.083.217.087.216.09.214.095.212.098.211.101.209.106.208.108.205.113.203.116.202.119.199.123.198.127.195.129.193.133.191.137.188.139.186.143.183.146.181.149.179.152.175.155.174.159.17.161.167.164.165.167.162.169.159.173.156.175.153.178.15.18.147.183.143.185.141.188.137.19.134.192.13.195.127.197.124.199.12.201.117.203.113.205.11.206.106.209.103.211.099.212.095.213.092.216.087.216.084.219.081.219.076.221.073.222.069.223.064.225.061.225.057.226.054.228.049.228.045.228.041.23.038.23.033.231.029.231.025.231.022.232.017.232.013.233.009.232.005.233.001.232-.003.232-.007.233-.011.232-.015.231-.02.232-.023.231-.027.23-.031.23-.036.229-.039.228-.043.228-.047.227-.051.226-.056.224-.059.224-.063.223-.066.221-.071.221-.075.219-.078.217-.082.216-.086.215-.09.212-.093.212-.097.209-.101.208-.104.206-.108.204-.112.202-.115.2-.118.198-.122.195-.126.194-.129.191-.132.189-.135.187-.139.184-.142.181-.145.179-.149.177-.151.174-.155.171-.157.168-.161.165-.163.163-.166.16-.169.156-.172.154-.174.151-.177.147-.18.145-.182.141-.185.138-.187.134-.189.132-.192.128-.194.124-.197.122-.198.117-.201.115-.202.11-.205.107-.206.104-.208.1-.21.096-.212.092-.213.089-.215.085-.216.081-.218.078-.219.073-.221.07-.222.066-.223.062-.224.058-.225.054-.226.05-.227.046-.228.042-.228.039-.23.034-.23.03-.23.027-.231.022-.232.018-.231.014-.233.01-.232.006-.232.002-.233-.002-.232-.006-.233-.01-.232-.014-.232-.018-.232-.022-.231-.027-.231-.03-.231-.034-.23-.039-.229-.042-.229-.046-.227-.05-.227-.054-.226-.058-.226-.062-.224-.066-.223-.07-.221-.073-.221-.078-.219-.081-.218-.085-.216-.089-.215-.092-.214-.096-.211-.1-.21-.104-.209-.107-.206-.11-.204-.115-.203-.117-.2-.122-.199-.124-.196-.128-.194-.132-.192-.134-.189-.138-.188-.141-.184-.145-.183-.147-.179-.151-.177-.154-.175-.156-.171-.16-.169-.163-.167-.165-.163-.168-.16-.171-.158-.174-.154-.177-.152-.179-.148-.181-.145-.184-.142-.187-.139-.189-.135-.191-.133-.194-.128-.195-.126z"/></g>
+                        <g id="TOUCHPAD" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="M391.176 81.356c2.681-14.098 7.871-41.573 10.178-55.73.07-.658.136-1.34.12-2.002a10.6 10.6 0 0 0-.27-2.306 8.2 8.2 0 0 0-1.71-3.424c-1.092-1.297-2.549-2.238-4.072-2.952-2.349-1.09-4.909-1.728-7.439-2.242-3.667-.735-7.876-1.225-11.605-1.67C347.661 7.596 316.936 7.255 288 7.162c-28.945.095-59.648.433-88.378 3.866-3.713.448-7.936.936-11.605 1.671-2.529.514-5.09 1.151-7.439 2.242-1.523.714-2.98 1.655-4.07 2.952a8.1 8.1 0 0 0-1.453 2.54 9.8 9.8 0 0 0-.519 2.84c-.036.691.01 1.401.08 2.09 2.325 14.272 7.462 41.794 10.208 55.993 1.288 8.903 2.894 17.942 5.96 26.423 2.49 6.821 6.273 13.623 12.588 17.56 3.746 2.38 8.106 3.615 12.464 4.271 2.61.397 5.39.61 8.03.734 8.825.373 54.392.116 64.136.188 9.98-.082 54.985.202 64.136-.188 2.821-.135 5.774-.364 8.563-.818 4.096-.66 8.181-1.858 11.726-4.06 2.42-1.489 4.554-3.429 6.332-5.64 2.871-3.567 4.884-7.77 6.46-12.047 3.063-8.48 4.671-17.522 5.957-26.424"/></g>
+                        <g id="LEFT_STICK" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="M230.072 189.521c.028-11.268-5.769-21.98-15.218-28.119-17.267-11.233-40.396-4.51-48.952 14.227-4 8.732-4 19.054 0 27.786 8.557 18.738 31.686 25.46 48.952 14.227 9.45-6.14 15.247-16.853 15.218-28.12"/><path class="stick-knob" id="LS_KNOB" d="M217.602 189.521c.024-7.07-3.635-13.832-9.568-17.68-10.849-7.064-25.405-2.833-30.778 8.945-2.514 5.47-2.514 12 0 17.47 5.373 11.778 19.93 16.008 30.778 8.945 5.933-3.848 9.592-10.609 9.568-17.68"/></g>
+                        <g id="RIGHT_STICK" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="M345.926 189.521c-.028-11.268 5.77-21.98 15.218-28.119 17.267-11.233 40.396-4.51 48.952 14.227 4.001 8.732 4.001 19.054 0 27.786-8.557 18.738-31.686 25.46-48.952 14.227-9.45-6.14-15.247-16.853-15.218-28.12"/><path class="stick-knob" id="RS_KNOB" d="M358.396 189.521c-.024-7.07 3.635-13.832 9.568-17.68 10.85-7.064 25.405-2.833 30.778 8.945 2.514 5.47 2.514 12 0 17.47-5.373 11.778-19.929 16.008-30.778 8.945-5.933-3.848-9.592-10.609-9.568-17.68"/></g>
+                        <g id="LIGHTBAR" fill="rgba(0,0,0,0.3)"><path d="m 174.34238,22.863276 c -4.02982,2.168533 -5.28174,6.839652 -5.86572,10.444549 l 8.4076,39.714405 4.84255,27.86479 c 6.76897,25.81733 12.90746,36.23654 40.42898,38.2872 l 59.87349,0.0729 56.56451,0.0259 c 32.81314,-0.25078 42.48861,-0.59413 54.17176,-31.7929 l 6.54985,-35.713439 8.05614,-36.513783 c 0.34354,-5.15659 -1.71327,-9.200553 -5.63707,-12.366454 l -12.08615,67.568265 -2.91847,12.673331 c -8.04831,24.16627 -17.28586,26.08682 -41.58461,27.31797 L 220.9711,130.12617 c -17.94856,-1.34927 -24.32138,-9.06748 -31.07076,-24.61678 l -3.41562,-13.953498 z"/></g>
+                        <g id="MUTE" data-btn="Mute" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"><path d="M301.573 220.542a3.06 3.06 0 0 1-1.82 2.79 3.05 3.05 0 0 1-1.226.256h-21.056a3.052 3.052 0 0 1-1.462-.374 3.06 3.06 0 0 1-1.582-2.778 3.06 3.06 0 0 1 1.63-2.592 3.06 3.06 0 0 1 1.415-.349h21.056a3.09 3.09 0 0 1 1.227.257 3.06 3.06 0 0 1 1.818 2.79"/></g>
+                        <g id="SPEAKER" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.8" opacity="0.4" transform="translate(-68.041 -41.199)"><path d="m358.366 193.663-.002-.089-.005-.089-.008-.088-.011-.088-.014-.088-.017-.087-.02-.086-.023-.086-.026-.085-.061-.167-.035-.082-.037-.08-.04-.079-.043-.078-.046-.076-.048-.074-.051-.073-.053-.071-.056-.069-.058-.067-.091-.097-.096-.092-.067-.058-.069-.056-.071-.054-.073-.051-.074-.049-.076-.046-.077-.043-.079-.041-.08-.038-.082-.035-.083-.032-.084-.029-.085-.026-.086-.023-.086-.02-.087-.017-.088-.014-.088-.011-.088-.008-.089-.005-.089-.002-.089.001-.089.004-.088.007-.088.01-.088.013-.087.016-.087.02-.086.023-.085.025-.084.028-.083.031-.082.034-.081.037-.079.04-.078.043-.076.045-.075.048-.073.05-.071.053-.069.055-.067.058-.097.091-.092.096-.059.067-.056.069-.054.07-.051.072-.049.074-.046.076-.044.077-.041.079-.038.08-.035.081-.032.083-.032.083l-.03.084-.027.085-.024.085-.021.086-.018.087-.015.087-.012.088-.008.088-.005.089-.002.089.005.178.007.088.01.088.029.175.019.087.022.086.025.085.028.084.031.083.034.082.076.16.042.078.045.076.048.075.05.073.108.141.057.068.091.097.096.093.1.088.213.158.151.093.157.083.081.037.082.034.083.031.169.053.086.023.087.02.087.017.088.013.265.021.089.001.089-.002.089-.005.088-.008.088-.011.088-.014.087-.017.086-.02.171-.049.167-.061.082-.035.08-.038.079-.041.077-.043.076-.046.074-.049.073-.051.071-.054.069-.056.067-.058.096-.092.091-.097.058-.067.056-.069.053-.071.051-.073.048-.074.046-.076.043-.078.04-.079.037-.08.035-.082.032-.083.029-.084.026-.085.023-.086.02-.086.017-.087.014-.088.011-.088.008-.088.005-.089z"/></g>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- RIGHT: Detail / Step Panel -->
+            <div class="w-full lg:w-72 xl:w-80 flex-shrink-0">
+                <div id="detail-panel" class="hidden bg-[#111120] border border-[rgba(255,255,255,0.08)] rounded-xl p-4 max-h-[calc(100vh-200px)] overflow-y-auto"></div>
+                <div id="step-panel" class="hidden bg-[#111120] border border-[rgba(255,255,255,0.08)] rounded-xl p-4"><div style="text-align:center;color:var(--text-muted);padding:2rem 0;">Select a move to start</div></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-2 text-[10px] text-[#6b7280]">Keyboard: WASD = D-Pad · IJKL = △□✕◯ · Q/E = L1/R1 · 1/2 = L2/R2 · Arrow Keys = Sticks</footer>
+
+    <script type="module">
+        import { PadApp } from './js/app.js';
+        PadApp.init();
+    </script>
+</body>
+</html>

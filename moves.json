@@ -1,0 +1,423 @@
+{
+  "categories": [
+    { "id": "basic", "label": "Basic (1–2★)", "minStars": 1, "maxStars": 2 },
+    { "id": "advanced", "label": "Advanced (3–4★)", "minStars": 3, "maxStars": 4 },
+    { "id": "expert", "label": "Expert (5★)", "minStars": 5, "maxStars": 5 },
+    { "id": "new_fc26", "label": "New in FC 26", "isNew": true }
+  ],
+  "moves": [
+    {
+      "id": 1,
+      "name": "Body Feint",
+      "stars": 1,
+      "category": "basic",
+      "ps5Controls": ["RS→", "RS←"],
+      "displayControls": "Flick RS ← or →",
+      "description": "A quick shoulder drop to fake a direction change. The most fundamental skill move in football.",
+      "whenToUse": "Approaching a defender 1v1 — sell the feint then exit the opposite way.",
+      "difficulty": "Very Easy",
+      "youtubeId": "dQw4w9WgXcQ"
+    },
+    {
+      "id": 2,
+      "name": "Ball Roll",
+      "stars": 1,
+      "category": "basic",
+      "ps5Controls": ["RS→(hold)", "RS←(hold)"],
+      "displayControls": "Hold RS ← or →",
+      "description": "Roll the ball laterally with the sole of the boot. Keeps possession while shifting the ball away from pressure.",
+      "whenToUse": "When a defender lunges in — roll away to create a passing lane or shot angle.",
+      "difficulty": "Very Easy"
+    },
+    {
+      "id": 3,
+      "name": "Fake Shot",
+      "stars": 1,
+      "category": "basic",
+      "ps5Controls": ["◯", "✕", "LS↖"],
+      "displayControls": "◯ then ✕ + LS direction (quick cancel)",
+      "description": "Charge a shot or cross then cancel with a pass button. Freezes defenders and goalkeepers.",
+      "whenToUse": "Inside the box to send the keeper the wrong way, or outside to cut inside.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 4,
+      "name": "Drag Back",
+      "stars": 1,
+      "category": "basic",
+      "ps5Controls": ["L1", "R1", "LS↓"],
+      "displayControls": "Hold L1 + R1 + LS ↓",
+      "description": "Drag the ball backwards while facing forward. Classic escape move under pressure.",
+      "whenToUse": "When receiving a pass with a defender tight on your back — drag away to create space.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 5,
+      "name": "Step Over",
+      "stars": 2,
+      "category": "basic",
+      "ps5Controls": ["RS↘", "RS↙"],
+      "displayControls": "Flick RS ↘ then ↙ (or reverse)",
+      "description": "The iconic step over — circle the foot around the ball to unbalance the defender.",
+      "whenToUse": "1v1 on the wing, mix with body feints to keep the fullback guessing.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 6,
+      "name": "Stop and Turn",
+      "stars": 2,
+      "category": "basic",
+      "ps5Controls": ["RS↓", "RS→"],
+      "displayControls": "RS ↓ then flick → (or ←)",
+      "description": "Stop the ball dead then explode 90 degrees. Also known as the 'fake stop'.",
+      "whenToUse": "Sprinting down the wing — fake a cross, stop, and cut inside.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 7,
+      "name": "Heel to Heel",
+      "stars": 2,
+      "category": "basic",
+      "ps5Controls": ["RS↑", "RS↓"],
+      "displayControls": "RS ↑ then ↓ quickly",
+      "description": "Tap the ball forward with the heel then push it with the other foot. Great for tight spaces.",
+      "whenToUse": "When double-teamed — heel-to-heel bursts you through the gap.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 8,
+      "name": "Ball Roll Fake",
+      "stars": 2,
+      "category": "basic",
+      "ps5Controls": ["RS←", "RS→"],
+      "displayControls": "RS ← then → (quick reverse roll)",
+      "description": "Start a ball roll one way, then quickly reverse. A deceptive two-touch move.",
+      "whenToUse": "Edge of the box — fake the roll to shoot then roll the other way and finesse.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 9,
+      "name": "Roulette",
+      "stars": 3,
+      "category": "advanced",
+      "ps5Controls": ["RS↖", "RS↑", "RS↗", "RS↘", "RS↓", "RS↙"],
+      "displayControls": "RS rotate 360° (clockwise or counter-clockwise)",
+      "description": "The Marseille Roulette — a full 360° spin that shields the ball. Zidane's signature move.",
+      "whenToUse": "When a defender charges directly at you — spin around them and burst into space.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 10,
+      "name": "Berba Spin",
+      "stars": 3,
+      "category": "advanced",
+      "ps5Controls": ["RS↑", "RS→"],
+      "displayControls": "RS ↑ then → (or ← for reverse)",
+      "description": "Flick forward then exit 90 degrees. A quicker, tighter version of the roulette.",
+      "whenToUse": "Cutting inside from the wing — Berba spin freezes the fullback.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 11,
+      "name": "Heel Chop",
+      "stars": 3,
+      "category": "advanced",
+      "ps5Controls": ["L2", "RS←", "R1"],
+      "displayControls": "Hold L2 + RS ← then R1 (quick chop)",
+      "description": "Chop the ball behind the standing leg at a sharp angle. Ronaldo's favourite cut.",
+      "whenToUse": "Running at pace — heel chop creates an instant 90° change that few defenders read.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 12,
+      "name": "Scoop Turn",
+      "stars": 3,
+      "category": "advanced",
+      "ps5Controls": ["L2", "RS↑", "RS↘"],
+      "displayControls": "L2 + RS ↑ then RS ↘",
+      "description": "A stylish 180° turn that scoops the ball in a half-circle behind you.",
+      "whenToUse": "Facing your own goal with a defender behind — scoop turn to face forward instantly.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 13,
+      "name": "Bolasie Flick",
+      "stars": 3,
+      "category": "advanced",
+      "ps5Controls": ["L2", "RS↑(hold)"],
+      "displayControls": "L2 + Hold RS ↑",
+      "description": "Flick the ball up and behind you. Named after Yannick Bolasie — pure flair.",
+      "whenToUse": "When a defender is right on your back — flick it over both of you and chase.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 14,
+      "name": "Double Touch",
+      "stars": 3,
+      "category": "advanced",
+      "ps5Controls": ["L1", "RS↑", "RS→"],
+      "displayControls": "L1 + RS ↑ then → (or ←)",
+      "description": "A rapid two-touch shift that sends the ball diagonally. Extremely effective in tight dribbling.",
+      "whenToUse": "Inside the box to create a split-second shooting angle.",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 15,
+      "name": "Elastico",
+      "stars": 4,
+      "category": "advanced",
+      "ps5Controls": ["RS→", "RS↘", "RS↓", "RS↙", "RS←"],
+      "displayControls": "RS → then roll down to ← (sweep motion)",
+      "description": "The famous elastico/flip-flap — Ronaldinho's trademark. Ball sticks to the outside then flicks inside.",
+      "whenToUse": "1v1 vs last defender — elastico leaves them planted while you glide past.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 16,
+      "name": "Reverse Elastico",
+      "stars": 4,
+      "category": "advanced",
+      "ps5Controls": ["RS←", "RS↙", "RS↓", "RS↘", "RS→"],
+      "displayControls": "RS ← then roll down to → (reverse sweep)",
+      "description": "The mirror of the elastico — starts inside then flicks outside. Even more deceptive.",
+      "whenToUse": "When the defender expects the elastico — reverse elastico beats the read.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 17,
+      "name": "McGeady Spin",
+      "stars": 4,
+      "category": "advanced",
+      "ps5Controls": ["RS↑", "RS↘"],
+      "displayControls": "RS ↑ then ↘ (or ↗ for reverse)",
+      "description": "Flick forward then rotate the back foot around the ball. Named after Aiden McGeady.",
+      "whenToUse": "On the wing, turning infield at pace — McGeady spin is faster than a Berba spin.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 18,
+      "name": "Rainbow Flick",
+      "stars": 4,
+      "category": "advanced",
+      "ps5Controls": ["RS↓", "RS↑", "RS↑"],
+      "displayControls": "RS ↓, ↑, ↑ (three quick flicks)",
+      "description": "Flick the ball up and over your head with both feet. Pure showboating when it comes off.",
+      "whenToUse": "When a defender charges in low — rainbow it over them and volley.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 19,
+      "name": "Sombrero Flick",
+      "stars": 4,
+      "category": "advanced",
+      "ps5Controls": ["RS↑", "RS↑", "RS↓"],
+      "displayControls": "RS ↑, ↑, ↓",
+      "description": "A stationary rainbow — pops the ball straight up for a volley or header.",
+      "whenToUse": "When receiving a lobbed pass under pressure — sombrero sets up a bicycle kick.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 20,
+      "name": "Fake Rabona",
+      "stars": 4,
+      "category": "advanced",
+      "ps5Controls": ["L2", "◯", "✕", "LS↖"],
+      "displayControls": "L2 + ◯ then ✕ + LS direction",
+      "description": "A rabona fake shot — wraps the kicking leg behind the standing leg then cancels. Freezes everyone.",
+      "whenToUse": "Cutting inside from the wing — fake rabona sets up an unstoppable finesse shot.",
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 21,
+      "name": "Drag to Heel",
+      "stars": 4,
+      "category": "advanced",
+      "ps5Controls": ["L1", "RS↓", "RS↑"],
+      "displayControls": "L1 + RS ↓ then ↑",
+      "description": "Drag the ball back then flick it forward with the heel. A sharp, sudden burst move.",
+      "whenToUse": "When double-teamed in midfield — drag to heel nutmegs the first defender.",
+      "difficulty": "Hard"
+    },
+    {
+      "id": 22,
+      "name": "Three Touch Roulette",
+      "stars": 4,
+      "category": "advanced",
+      "ps5Controls": ["L2", "RS↓", "RS←", "RS↑", "RS→"],
+      "displayControls": "L2 + RS ↓, ←, ↑, → (270° rotation)",
+      "description": "A tighter, quicker roulette that uses three touches instead of a full spin. Unpredictable exit.",
+      "whenToUse": "In the penalty box with multiple defenders — three-touch roulette finds the gap.",
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 23,
+      "name": "Advanced Rainbow",
+      "stars": 5,
+      "category": "expert",
+      "ps5Controls": ["RS↓", "RS↑(hold)", "RS↑"],
+      "displayControls": "RS ↓, hold ↑, then flick ↑",
+      "description": "The advanced rainbow — higher arc, more power, lands further ahead. Neymar's signature flick.",
+      "whenToUse": "When a defender is 2-3 metres away and charging — advanced rainbow clears them cleanly.",
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 24,
+      "name": "Waka Waka",
+      "stars": 5,
+      "category": "expert",
+      "ps5Controls": ["RS→", "RS↘", "RS↓", "RS↙", "RS←"],
+      "displayControls": "RS → then sweep down to ← (like elastico, different rhythm)",
+      "description": "A variant of the elastico with a distinct rhythm — the ball almost dances. Popularised in street football.",
+      "whenToUse": "Showboating 1v1 — the Waka Waka is style points and genuinely effective against aggressive defenders.",
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 25,
+      "name": "Tornado Spin",
+      "stars": 5,
+      "category": "expert",
+      "ps5Controls": ["L1", "RS↑", "RS↑", "RS↑"],
+      "displayControls": "L1 + RS ↑ three times quickly",
+      "description": "A rapid 360° spin initiated by three quick forward flicks. The player tornadoes past the defender.",
+      "whenToUse": "When you need to beat a defender and create a passing angle simultaneously.",
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 26,
+      "name": "Elastico Chop",
+      "stars": 5,
+      "category": "expert",
+      "ps5Controls": ["RS→", "RS↘", "RS↓", "L2"],
+      "displayControls": "Elastico start then L2 chop exit",
+      "description": "Start an elastico then chop the ball at a right angle halfway through. Two moves in one.",
+      "whenToUse": "Against a defender who reads the standard elastico — the chop exit beats them on the second move.",
+      "difficulty": "Elite"
+    },
+    {
+      "id": 27,
+      "name": "Flair Nutmeg",
+      "stars": 5,
+      "category": "expert",
+      "ps5Controls": ["L1", "L2", "RS↓", "RS↑"],
+      "displayControls": "L1 + L2 + RS ↓ then ↑",
+      "description": "A cheeky nutmeg with extra animation flair. The ball slides between the defender's legs with style.",
+      "whenToUse": "When a defender over-commits — flair nutmeg is the ultimate humiliation and effective exit.",
+      "difficulty": "Elite"
+    },
+    {
+      "id": 28,
+      "name": "Bridge",
+      "stars": 3,
+      "category": "basic",
+      "ps5Controls": ["L1", "RS↓", "RS→"],
+      "displayControls": "L1 + RS ↓ then → (or ←)",
+      "description": "Knock the ball past one side of the defender and run around the other. Simple, devastating.",
+      "whenToUse": "When you have a pace advantage — bridge sends the ball one way while you run the other.",
+      "difficulty": "Easy"
+    },
+    {
+      "id": 29,
+      "name": "Flair Pass",
+      "stars": 1,
+      "category": "basic",
+      "ps5Controls": ["L2", "✕"],
+      "displayControls": "L2 + ✕ (pass)",
+      "description": "Adds a flashy animation to a standard pass. Backheels, no-look passes, and scoops.",
+      "whenToUse": "Anytime you want style points on a simple pass — just hold L2.",
+      "difficulty": "Very Easy"
+    },
+    {
+      "id": 30,
+      "name": "Lane Change",
+      "stars": 2,
+      "category": "basic",
+      "ps5Controls": ["RS↑", "RS↗"],
+      "displayControls": "RS ↑ then ↗ (diagonal flick)",
+      "description": "A subtle lateral shift that opens the body for a shot or cross. The pro player's favourite setup touch.",
+      "whenToUse": "Before shooting — lane change creates the perfect angle for a far-post finesse.",
+      "difficulty": "Easy"
+    }
+  ],
+  "sequences": [
+    {
+      "id": 1,
+      "name": "Classic Wing Combo",
+      "moveIds": [5, 2, 3],
+      "timingMs": [600, 400, 500],
+      "difficulty": "Easy",
+      "description": "The bread-and-butter wing combo. Step over to freeze the fullback, ball roll to shift inside, fake shot to wrong-foot the keeper."
+    },
+    {
+      "id": 2,
+      "name": "Spin Cycle",
+      "moveIds": [1, 9, 12],
+      "timingMs": [500, 800, 600],
+      "difficulty": "Medium",
+      "description": "Feint one way, roulette through the press, scoop turn to face goal. A midfield destroyer combo."
+    },
+    {
+      "id": 3,
+      "name": "Box Creator",
+      "moveIds": [2, 4, 7],
+      "timingMs": [400, 500, 350],
+      "difficulty": "Easy",
+      "description": "Create shooting space in tight areas. Roll away, drag back to reset, heel-to-heel burst into the shot."
+    },
+    {
+      "id": 4,
+      "name": "Flair God",
+      "moveIds": [15, 16, 17],
+      "timingMs": [900, 900, 700],
+      "difficulty": "Very Hard",
+      "description": "The ultimate showboat chain. Elastico, immediate reverse, then McGeady spin to exit. Defenders get sent to the shadow realm."
+    },
+    {
+      "id": 5,
+      "name": "Stop & Pop",
+      "moveIds": [6, 3, 5],
+      "timingMs": [500, 400, 500],
+      "difficulty": "Medium",
+      "description": "Sprint down the wing, fake the cross with a stop-turn, fake the shot, step over and cross for real. Unreadable."
+    },
+    {
+      "id": 6,
+      "name": "Chop & Flick",
+      "moveIds": [11, 2, 23],
+      "timingMs": [500, 400, 1000],
+      "difficulty": "Very Hard",
+      "description": "Chop inside, roll to set up, advanced rainbow over the charging CB. Only for the brave."
+    },
+    {
+      "id": 7,
+      "name": "Trickster's Exit",
+      "moveIds": [14, 10, 20],
+      "timingMs": [400, 600, 700],
+      "difficulty": "Very Hard",
+      "description": "Double touch past the first man, Berba spin past the second, fake rabona to freeze the keeper. Goal guaranteed."
+    },
+    {
+      "id": 8,
+      "name": "Aerial Assault",
+      "moveIds": [28, 19, 25],
+      "timingMs": [500, 700, 900],
+      "difficulty": "Elite",
+      "description": "Bridge past one defender, sombrero flick over the second, tornado spin to lose the third. Practically a cheat code."
+    },
+    {
+      "id": 9,
+      "name": "Nutmeg Rush",
+      "moveIds": [21, 24, 13],
+      "timingMs": [600, 900, 800],
+      "difficulty": "Elite",
+      "description": "Drag to heel for the nutmeg, Waka Waka to dance away, Bolasie flick for the highlight reel finish."
+    },
+    {
+      "id": 10,
+      "name": "Warmup Routine",
+      "moveIds": [5, 1, 2, 3],
+      "timingMs": [600, 400, 400, 500],
+      "difficulty": "Easy",
+      "description": "The perfect warmup chain. Practice these four fundamentals in sequence before every session to build muscle memory."
+    }
+  ]
+}
